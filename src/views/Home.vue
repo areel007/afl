@@ -2,10 +2,11 @@
 import { ref, reactive } from "vue";
 // import GoogleAutocomplete from "../components/GoogleAutocomplete.vue";
 import PartnersCarousel from "../components/PartnersCarousel.vue";
+import Rollout from "./about-us/rollout.vue";
 
 export default {
   name: "Home",
-  components: { PartnersCarousel },
+  components: { PartnersCarousel, Rollout },
   data() {
     return {
       step: 1,
@@ -122,9 +123,7 @@ export default {
     </section>
 
     <!--  -->
-    <section
-      class="p-[50px_0_0_0] md:p-[100px_0_0_0] bg-white"
-    >
+    <section class="p-[50px_0_0_0] md:p-[100px_0_0_0] bg-white">
       <div class="w-[85%] xl:w-[1200px] mx-auto">
         <div
           class="grid grid-cols-1 md:grid-cols-2 gap-[20px] md:gap-[40px] items-center"
@@ -152,7 +151,8 @@ export default {
               exercitationem ullam soluta error amet, quis nam laboriosam ex,
               voluptatum porro enim odio possimus veritatis.
             </p>
-            <a href="/get-connected/homes"
+            <a
+              href="/get-connected/homes"
               class="bg-black p-[8px_20px] text-white rounded text-[14px] md:text-[16px] font-[300]"
             >
               Get started
@@ -186,22 +186,22 @@ export default {
     </section>
 
     <!--  -->
-    <section class="py-[50px] md:py-[100px] bg-[#67be68]">
+    <section class="py-[50px] md:py-[100px] bg-[#2a2760]">
       <div class="w-[85%] xl:w-[1200px] mx-auto">
         <div
           class="grid grid-cols-1 md:grid-cols-2 items-center gap-[20px] md:gap-[40px]"
         >
           <h3
-            class="text-black font-[600] text-[20px] md:text-[32px] leading-[1]"
+            class="text-white font-[600] text-[20px] md:text-[32px] leading-[1]"
           >
-            We're revolutionising broadband
+            Check my address on the Network
           </h3>
 
           <div class="grid grid-cols-[65%_1fr] md:grid-cols-[80%_1fr]">
             <input
               type="text"
               placeholder="Your home address i.e. Ikoyi, Lagos"
-              class="bg-transparent placeholder:text-[12px] md:placeholder:text-[14px] placeholder:text-black outline-none border border-black p-[10px]"
+              class="bg-transparent placeholder:text-[12px] md:placeholder:text-[14px] placeholder:text-white outline-none border border-white p-[10px] text-white"
             />
             <button
               class="bg-black text-white text-[12px] md:text-[14px] leading-[1]"
@@ -216,7 +216,7 @@ export default {
     <!--  -->
     <section class="p-[50px_0] md:p-[100px_0]">
       <div
-        class="w-[85%] xl:w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-[70%_1fr] gap-[20px] md:gap-[40px]"
+        class="w-[85%] xl:w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-[60%_1fr] gap-[20px] md:gap-[40px]"
       >
         <div>
           <p class="text-[14px] md:text-[16px] text-black uppercase mb-[20px]">
@@ -228,9 +228,14 @@ export default {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ab.
           </h3>
           <p class="text-[14px] md:text-[16px] mb-[20px] md:mb-[40px]">
-            We have designed a large open-access, fibre-only network in Lagos, covering millions of premises and offering services in various locations across the state. Our planned rollout will extend to over 1.2 million households, businesses, public sector sites, and 5G mobile sites.
+            We have designed a large open-access, fibre-only network in Lagos,
+            covering millions of premises and offering services in various
+            locations across the state. Our planned rollout will extend to over
+            1.2 million households, businesses, public sector sites, and 5G
+            mobile sites.
           </p>
-          <router-link to="/about-us/our-rollout"
+          <router-link
+            to="/about-us/our-rollout"
             class="bg-black text-white text-[14px] md:text-[16px] p-[7px_20px] rounded font-[300]"
           >
             View rollout map
@@ -302,15 +307,16 @@ export default {
             >
               Lorem ipsum dolor sit amet.
             </h3>
-            <p class="text-[14px] md:text-[16px] mb-[20px]">
+            <p class="text-[14px] md:text-[16px] mb-[40px]">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Temporibus et excepturi nemo? Quae animi architecto numquam ullam,
               consequatur non sunt.
             </p>
-            <a href="/get-connected/homes"
+            <a
+              href="/get-connected/homes"
               class="bg-black p-[8px_20px] text-white rounded text-[14px] md:text-[16px] font-[300]"
             >
-              Get started
+              Learn more
             </a>
           </div>
           <div>
@@ -339,17 +345,21 @@ export default {
             <h3
               class="text-[18px] md:text-[30px] leading-[1.2] font-[600] mb-[10px] md:mb-[20px]"
             >
-              Lorem ipsum dolor sit amet.
+              Lightning-fast connection for your business
             </h3>
-            <p class="text-[14px] md:text-[16px] mb-[20px]">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Temporibus et excepturi nemo? Quae animi architecto numquam ullam,
-              consequatur non sunt.
+            <p class="text-[14px] md:text-[16px] mb-[10px]">
+              A Full Fibre connection directly to your business promises
+              lightning-fast speeds with equal upload and download capabilities.
             </p>
-            <a href="/get-connected/homes"
+            <p class="text-[14px] md:text-[16px] mb-[40px]">
+              This means a boost in productivity and efficiency, as you can
+              transfer large amounts of data in the blink of an eye.
+            </p>
+            <a
+              href="/get-connected/businesses"
               class="bg-black p-[8px_20px] text-white rounded text-[14px] md:text-[16px] font-[300]"
             >
-              Get started
+              Learn more
             </a>
           </div>
         </div>
@@ -357,12 +367,12 @@ export default {
     </section>
 
     <!--  -->
-    <section class="bg-[#6CC06D] py-[50px] md:py-[100px]">
+    <section class="bg-[#67be68] py-[50px] md:py-[100px]">
       <div class="w-[85%] xl:w-[1200px] mx-auto">
         <h3
           class="text-center font-[600] text-[18px] md:text-[30px] mb-[10px] md:mb-[20px] leading-[1.2]"
         >
-          More about AFL
+          More about AFL Network
         </h3>
         <div class="p-[20px] bg-white">
           <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4">
@@ -387,8 +397,10 @@ export default {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quia
                 expedita consectetur dolorem ex dolorum!
               </p>
-              <NuxtLink to="/" class="underline text-[10px] md:text-[12px]"
-                >See our vision</NuxtLink
+              <router-link
+                to="/about-us/"
+                class="underline text-[10px] md:text-[12px] cursor-pointer"
+                >See our vision</router-link
               >
             </div>
 
@@ -413,8 +425,10 @@ export default {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quia
                 expedita consectetur dolorem ex dolorum!
               </p>
-              <NuxtLink to="/" class="underline text-[10px] md:text-[12px]"
-                >See our partners</NuxtLink
+              <router-link
+                to="/partners"
+                class="underline text-[10px] md:text-[12px] cursor-pointer"
+                >See our partners</router-link
               >
             </div>
 
@@ -439,8 +453,10 @@ export default {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quia
                 expedita consectetur dolorem ex dolorum!
               </p>
-              <NuxtLink to="/" class="underline text-[10px] md:text-[12px]"
-                >See our team</NuxtLink
+              <router-link
+                to="/about-us/our-management-team"
+                class="underline text-[10px] md:text-[12px] cursor-pointer"
+                >See our team</router-link
               >
             </div>
 
@@ -463,8 +479,10 @@ export default {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quia
                 expedita consectetur dolorem ex dolorum!
               </p>
-              <NuxtLink to="/" class="underline text-[10px] md:text-[12px]"
-                >See faqs</NuxtLink
+              <router-link
+                to="/communication/contact-us"
+                class="underline text-[10px] md:text-[12px] cursor-pointer"
+                >See faqs</router-link
               >
             </div>
           </div>

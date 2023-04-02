@@ -57,130 +57,93 @@
     <!--  -->
     <section class="py-[50px] md:py-[100px] bg-[#6cc06d]">
       <div class="w-[85%] xl:w-[1200px] mx-auto">
+        <SearchFilter @filter-action="filterAction" />
+
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px]">
           <NewsCard
             v-for="(_news, index) in news"
             :key="index"
             :category="_news.category"
             :title="_news.title"
-            :date="_news.date"
-            :img-url="_news.imgUrl"
+            :date="_news.createdAt"
+            :img-url="_news.imageUrl"
           />
         </div>
-        <div class="w-full md:w-[400px] mx-auto mt-[20px] md:mt-[40px]">
-          <div class="flex justify-center gap-[5px] items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M15.75 19.5L8.25 12l7.5-7.5"
-              />
-            </svg>
 
-            <div
-              class="p-[5px] bg-[#6cc06d] w-[30px] h-[30px] text-white flex justify-center items-center cursor-pointer"
-            >
-              1
-            </div>
-            <div
-              class="p-[5px] bg-black w-[30px] h-[30px] text-white flex justify-center items-center cursor-pointer"
-            >
-              2
-            </div>
-            <div
-              class="p-[5px] bg-black w-[30px] h-[30px] text-white flex justify-center items-center cursor-pointer"
-            >
-              3
-            </div>
-            <div
-              class="p-[5px] bg-black w-[30px] h-[30px] text-white flex justify-center items-center cursor-pointer"
-            >
-              4
-            </div>
-
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M8.25 4.5l7.5 7.5-7.5 7.5"
-              />
-            </svg>
-          </div>
-        </div>
+        <Pagination
+          @get-page="getPage"
+          :step="step"
+          @prev="prev"
+          @next="next"
+        />
       </div>
     </section>
   </div>
 </template>
 
-<script>
+<script setup>
+import axios from "axios";
+import { onMounted, ref } from "vue";
 import NewsCard from "../../components/NewsCard.vue";
-export default {
-  name: "AFLBlog",
-  components: { NewsCard },
-  data() {
-    return {
-      news: [
-        {
-          category: "AFL News",
-          title:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, velit.",
-          date: "21 March 2023",
-          imgUrl:
-            "https://cdn.cityfibre.com/transforms/s3assets/419441/5b99c_e6599.webp",
-        },
-        {
-          category: "AFL News",
-          title: "Sit dolor amet consectetur adipisicing elit. Quaerat, velit.",
-          date: "17 March 2023",
-          imgUrl:
-            "https://cdn.cityfibre.com/transforms/s3assets/419441/5b99c_e6599.webp",
-        },
-        {
-          category: "AFL News",
-          title: "Sit dolor amet consectetur adipisicing elit. Quaerat, velit.",
-          date: "17 March 2023",
-          imgUrl:
-            "https://cdn.cityfibre.com/transforms/s3assets/419441/5b99c_e6599.webp",
-        },
-        {
-          category: "AFL News",
-          title: "Sit dolor amet consectetur adipisicing elit. Quaerat, velit.",
-          date: "17 March 2023",
-          imgUrl:
-            "https://cdn.cityfibre.com/transforms/s3assets/419441/5b99c_e6599.webp",
-        },
-        {
-          category: "AFL News",
-          title: "Sit dolor amet consectetur adipisicing elit. Quaerat, velit.",
-          date: "17 March 2023",
-          imgUrl:
-            "https://cdn.cityfibre.com/transforms/s3assets/419441/5b99c_e6599.webp",
-        },
-        {
-          category: "AFL News",
-          title: "Sit dolor amet consectetur adipisicing elit. Quaerat, velit.",
-          date: "17 March 2023",
-          imgUrl:
-            "https://cdn.cityfibre.com/transforms/s3assets/419441/5b99c_e6599.webp",
-        },
-      ],
-    };
-  },
+import Pagination from "../../components/Pagination.vue";
+import SearchFilter from "../../components/SearchFilter.vue";
+
+const news = ref(null);
+const step = ref(0);
+
+const getAllNews = async () => {
+  const _news = await axios.get("https://afl-server.onrender.com/api/v1/news");
+
+  news.value = _news.data.msg;
 };
+
+const getPage = async (e) => {
+  const response = await axios.get(
+    `https://afl-server.onrender.com/api/v1/news?p=${e.target.innerHTML - 1}`
+  );
+
+  news.value = response.data.msg;
+
+  step.value = parseInt(e.target.innerHTML - 1);
+};
+
+const prev = async () => {
+  const st = parseInt(step.value - 1);
+  const response = await axios.get(`https://afl-server.onrender.com/api/v1/news?p=${st}`);
+
+  news.value = response.data.msg;
+
+  step.value = st;
+};
+
+const next = async () => {
+  const st = parseInt(step.value + 1);
+  const response = await axios.get(`https://afl-server.onrender.com/api/v1/news?p=${st}`);
+
+  news.value = response.data.msg;
+
+  step.value = st;
+};
+
+const filterAction = async (e) => {
+  if (e.trim().length > 0) {
+    const _news = await axios.get(
+      "https://afl-server.onrender.com/api/v1/news/dashboard"
+    );
+
+    news.value = _news.data.msg.filter((_res) =>
+      _res.title.toLowerCase().includes(e.toLowerCase())
+    );
+  } else {
+    const _news = await axios.get("https://afl-server.onrender.com/api/v1/news");
+
+    getAllNews();
+  }
+};
+
+onMounted(() => {
+  getAllNews();
+});
 </script>
 
 <style scoped>

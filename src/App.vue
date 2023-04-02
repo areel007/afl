@@ -16,6 +16,9 @@
       @open-mobile-menu="openMobileMenu"
       @close-mobile-menu="closeMobileMenu"
       @show-search="showSearch"
+      v-if="
+        $route.path.split('/')[1] !== 'admin' && $route.name !== 'pageNotFound'
+      "
     />
     <MobileMenu
       :show-mobile-menu="showMobileMenu"

@@ -1,7 +1,11 @@
 <template>
   <footer
     class="py-[50px] md:py-[100px] bg-black"
-    :class="$route.path !== '/' ? 'relative top-[48px] md:top-[92px]' : null"
+    :class="
+      $route.path.split('/')[1] !== 'admin' && $route.path!=='/'
+        ? 'relative top-[48px] md:top-[92px]'
+        : null
+    "
   >
     <div class="w-[90%] xl:w-[1200px] mx-auto">
       <div

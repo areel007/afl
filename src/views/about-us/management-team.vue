@@ -85,9 +85,9 @@
         >
           <div>
             <h3
-              class="text-black font-[700] uppercase text-[20px] md:text-[32px] leading-[1] tracking-tighter mb-[10px]"
+              class="text-black font-[600] text-[20px] md:text-[32px] leading-[1] mb-[10px]"
             >
-              Check my address
+              Check my address on the Network
             </h3>
             <p class="text-[14px] md:text-[16px]">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.

@@ -335,7 +335,7 @@
     </section>
 
     <!--  -->
-    <section class="py-[50px] md:py-[100px] bg-[#3E3F69]">
+    <section class="py-[50px] md:py-[100px] bg-[#2a2760]">
       <div class="w-[85%] xl:w-[1200px] mx-auto">
         <div
           class="grid grid-cols-1 md:grid-cols-2 items-center gap-[20px] md:gap-[40px]"
@@ -344,7 +344,7 @@
             <h3
               class="text-white font-[600] text-[20px] md:text-[32px] leading-[1.2] mb-[10px] md:mb-[20px]"
             >
-              Check my address
+              Check my address on the Network
             </h3>
             <p class="text-[14px] md:text-[16px] text-white">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.

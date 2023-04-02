@@ -142,18 +142,18 @@
     </section>
 
     <!--  -->
-    <section class="py-[50px] md:py-[100px] bg-[#f5f5f5]">
+    <section class="py-[50px] md:py-[100px] bg-[#2a2760]">
       <div class="w-[85%] xl:w-[1200px] mx-auto">
         <div
           class="grid grid-cols-1 md:grid-cols-2 items-center gap-[20px] md:gap-[40px]"
         >
           <div>
             <h3
-              class="text-black font-[600] text-[20px] md:text-[32px] leading-[1.2] mb-[10px] md:mb-[20px]"
+              class="text-white font-[600] text-[20px] md:text-[32px] leading-[1.2] mb-[10px] md:mb-[20px]"
             >
-              Check my address
+              Check my address on the Network
             </h3>
-            <p class="text-[14px] md:text-[16px]">
+            <p class="text-[14px] md:text-[16px] text-white">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Dignissimos natus ex impedit voluptas, blanditiis voluptatem?
             </p>
@@ -163,7 +163,7 @@
             <input
               type="text"
               placeholder="Your home address i.e. Ikoyi, Lagos"
-              class="bg-transparent placeholder:text-[12px] md:placeholder:text-[14px] placeholder:text-black outline-none border border-gray-300 p-[10px]"
+              class="text-white bg-transparent placeholder:text-[12px] md:placeholder:text-[14px] placeholder:text-white outline-none border border-gray-300 p-[10px]"
             />
             <button
               class="bg-black text-white text-[12px] md:text-[14px] leading-[1]"

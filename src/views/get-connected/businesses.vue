@@ -352,7 +352,7 @@
             <h3
               class="text-white font-[600] text-[20px] md:text-[32px] leading-[1.2] mb-[10px] md:mb-[20px]"
             >
-              Check my address
+              Check my address on the Network
             </h3>
             <p class="text-[14px] md:text-[16px] text-white">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
