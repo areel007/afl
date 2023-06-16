@@ -14,7 +14,7 @@
     ref="mySwiper"
   >
     <swiper-slide v-for="(network, index) in networks" :key="index">
-      <div class="w-[70px] h-[70px]">
+      <div class="w-[108px] h-[108px]">
         <img :src="network" alt="afl partners" class="rounded-full" />
       </div>
     </swiper-slide>

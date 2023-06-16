@@ -8,9 +8,7 @@
             <li
               class="text-[#383B63] p-[10px] hover:bg-[#6DC06E] hover:text-white cursor-pointer"
               :class="
-                $route.path === '/about-us/our-rollout'
-                  ? 'bg-[#6CC06D] text-white'
-                  : null
+                $route.path === '/about-us/our-rollout' ? 'bg-[#6CC06D] text-white' : null
               "
             >
               <router-link to="/about-us/our-rollout">Our Rollout</router-link>
@@ -18,7 +16,9 @@
             <li
               class="text-[#383B63] p-[10px] hover:bg-[#6DC06E] hover:text-white cursor-pointer"
             >
-              <router-link to="/about-us/our-infrastructure">Our Infrastructure</router-link>
+              <router-link to="/about-us/our-infrastructure"
+                >Our Infrastructure</router-link
+              >
             </li>
             <li
               class="text-[#383B63] p-[10px] hover:bg-[#6DC06E] hover:text-white cursor-pointer"
@@ -30,7 +30,7 @@
             >
               <router-link to="/about-us/our-service">Our Service</router-link>
             </li>
-            <li
+            <!-- <li
               class="text-[#383B63] p-[10px] hover:bg-[#6DC06E] hover:text-white cursor-pointer"
             >
               <router-link to="/about-us/our-management-team">Our Vision</router-link>
@@ -39,7 +39,7 @@
               class="text-[#383B63] p-[10px] hover:bg-[#6DC06E] hover:text-white cursor-pointer"
             >
               <router-link to="/">Our Management Team</router-link>
-            </li>
+            </li> -->
           </ul>
           <button class="p-[10px] bg-[#383B63] text-white text-[14px]">
             Check availability
@@ -50,9 +50,7 @@
 
     <!--  -->
     <section class="h-[300px] md:h-[500px] about-us-hero">
-      <div
-        class="w-full h-full bg-black absolute top-0 left-0 opacity-[.7]"
-      ></div>
+      <div class="w-full h-full bg-black absolute top-0 left-0 opacity-[.7]"></div>
       <div class="absolute w-full h-full top-0 left-0">
         <div
           class="w-[85%] xl:w-[1200px] h-full flex flex-col justify-center mx-auto gap-[10px] md:gap-[40px]"
@@ -61,7 +59,9 @@
             <h1
               class="text-white font-[700] uppercase text-[24px] md:text-[40px] lg:text-[80px] leading-[1]"
             >
-            FIBRE-OPTIC NETWORK DESIGNED SPECIFICALLY <br class="hidden md:block"> FOR THE DIGITAL ERA
+              FIBRE-OPTIC NETWORK DESIGNED SPECIFICALLY
+              <br class="hidden md:block" />
+              FOR THE DIGITAL ERA
             </h1>
           </div>
         </div>
@@ -79,15 +79,20 @@
               Our Rollout
             </h3>
             <p class="text-[18px] md:text-[22px] font-[300] text-left mb-[30px]">
-              Our company has designed a large open-access, fibre-only network
-              in Lagos, covering millions of premises and offering services in
-              various locations across our footprint. Our planned rollout will
-              extend to over 1.2 million households, businesses, public sector
-              sites, and 5G mobile sites.
+              Our company has designed a large open-access, fibre-only network in Lagos,
+              covering millions of premises and offering services in various locations
+              across our footprint. Our planned rollout will extend to over 1.2 million
+              households, businesses, public sector sites, and 5G mobile sites.
             </p>
           </div>
 
-          <div class="w-full h-[300px] md:h-[400px] bg-black"></div>
+          <div class="w-full h-[250px] md:h-[400px] bg-black">
+            <img
+              src="../../assets/images/our-rollout.jpg"
+              alt="afl network"
+              class="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -98,8 +103,7 @@
         <h3
           class="text-center font-[600] text-[16px] md:text-[22px] w-full lg:w-[900px] m-[0_auto_10px_auto] md:m-[0_auto_20px_auto]"
         >
-          Explore the map and list of locations below to find out where we're
-          building
+          Explore the map and list of locations below to find out where we're building
         </h3>
         <div class="w-full">
           <Map />
@@ -119,10 +123,10 @@
             >
               Check my address on the Network
             </h3>
-            <p class="text-[14px] md:text-[16px]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Dignissimos natus ex impedit voluptas, blanditiis voluptatem?
-            </p>
+            <!-- <p class="text-[14px] md:text-[16px]">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos natus
+              ex impedit voluptas, blanditiis voluptatem?
+            </p> -->
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-[80%_1fr]">

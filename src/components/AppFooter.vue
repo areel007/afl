@@ -1,19 +1,20 @@
 <template>
   <footer
+    v-if="$route.path !== '/'"
     class="py-[50px] md:py-[100px] bg-black"
     :class="
-      $route.path.split('/')[1] !== 'admin' && $route.path!=='/'
+      $route.path.split('/')[1] !== 'admin' && $route.path !== '/home'
         ? 'relative top-[48px] md:top-[92px]'
         : null
     "
   >
-    <div class="w-[90%] xl:w-[1200px] mx-auto">
+    <div class="w-[90%] xl:w-[1200px] mx-auto mb-[50px]">
       <div
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[40%_1fr_1fr_1fr] gap-[30px]"
       >
         <router-link to="/">
           <img
-            src="../assets/images/logo-afl.png"
+            src="../assets/images/afl-networks-logo-reversed.png"
             alt="afl logo"
             class="w-[100px] md:w-[180px]"
           />
@@ -42,22 +43,24 @@
             Contact us
           </h3>
           <p class="text-[14px] text-white">
-            AFL Limited Lagos:
-            <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quam
-            sapien, pretium nec lacus quis, pellentesque ultricies diam.
+            7 Admirality Way, <br />
+            Lekki Phase 1 <br />
+            (beside Lennox Mall), <br />
+            Lagos
           </p>
         </div>
 
         <div>
           <p class="text-[14px] text-white">
-            AFL Limited Lagos:
-            <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quam
-            sapien, pretium nec lacus quis, pellentesque ultricies diam.
+            <b class="text-[#67BE68]">E</b>: info@afl.ng <br /><b class="text-[#67BE68]"
+              >T</b
+            >: +234 908 799 1348
           </p>
         </div>
       </div>
+    </div>
+    <div class="text-white text-center leading-[1] text-[14px]">
+      &copy; {{ new Date().getFullYear() }} AFL Networks. All rights reserved.
     </div>
   </footer>
 </template>

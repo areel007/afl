@@ -7,9 +7,7 @@
             <li
               class="text-[#383B63] p-[10px] hover:bg-[#6DC06E] hover:text-white cursor-pointer"
               :class="
-                $route.path === '/get-connected/homes'
-                  ? 'bg-[#6CC06D] text-white'
-                  : null
+                $route.path === '/get-connected/homes' ? 'bg-[#6CC06D] text-white' : null
               "
             >
               <router-link to="/get-connected/homes" class=""
@@ -40,14 +38,10 @@
             <li
               class="text-[#383B63] p-[10px] hover:bg-[#6DC06E] hover:text-white cursor-pointer"
               :class="
-                $route.path === '/get-connected/public'
-                  ? 'bg-[#6CC06D] text-white'
-                  : null
+                $route.path === '/get-connected/public' ? 'bg-[#6CC06D] text-white' : null
               "
             >
-              <router-link to="/get-connected/public"
-                >Public Sectors</router-link
-              >
+              <router-link to="/get-connected/public">Public Sectors</router-link>
             </li>
           </ul>
           <button class="p-[10px] bg-[#383B63] text-white text-[14px]">
@@ -59,9 +53,7 @@
 
     <!--  -->
     <section class="h-[300px] md:h-[500px] get-connected-hero">
-      <div
-        class="w-full h-full bg-black absolute top-0 left-0 opacity-[.7]"
-      ></div>
+      <div class="w-full h-full bg-black absolute top-0 left-0 opacity-[.5]"></div>
       <div class="absolute w-full h-full top-0 left-0">
         <div
           class="w-[85%] xl:w-[1200px] h-full flex flex-col justify-center mx-auto gap-[10px] md:gap-[40px]"
@@ -72,13 +64,11 @@
             >
               Enabling open access metro fibre broadband
             </h1>
-            <p
-              class="text-[14px] md:text-[16px] text-white leading-[1] font-[300]"
-            >
+            <!-- <p class="text-[14px] md:text-[16px] text-white leading-[1] font-[300]">
               Enter your address to find out how you can get connected
-            </p>
+            </p> -->
           </div>
-          <div
+          <!-- <div
             class="w-[100%] md:w-[700px] grid grid-cols-1 sm:grid-cols-[80%_1fr] items-start"
           >
             <input
@@ -86,10 +76,8 @@
               class="p-[7px_10px] outline-none"
               placeholder="Your home address, i.e. Ikoyi"
             />
-            <button class="p-[7px_10px] bg-[#6CC06D] text-white">
-              Check now
-            </button>
-          </div>
+            <button class="p-[7px_10px] bg-[#6CC06D] text-white">Check now</button>
+          </div> -->
         </div>
       </div>
     </section>
@@ -97,76 +85,73 @@
     <!--  -->
     <section
       class="p-[50px_0_50px_0] md:p-[100px_0_100px_0] bg-white"
-      :class="
-        isRequirementFormShown ? '!p-[50px_0_0_0] md:!p-[100px_0_0_0]' : null
-      "
+      :class="isRequirementFormShown ? '!p-[50px_0_0_0] md:!p-[100px_0_0_0]' : null"
     >
       <div class="w-[85%] xl:w-[1200px] mx-auto">
         <div
-          class="grid grid-cols-1 lg:grid-cols-[60%_1fr] gap-[30px] md:gap-[50px] items-start"
+          class="grid grid-cols-1 lg:grid-cols-[1fr_450px] gap-[30px] md:gap-[50px] items-start"
         >
           <div>
-            <h3
-              class="text-[20px] md:text-[30px] leading-[1.2] font-[600] mb-[20px]"
-            >
-              Digitally transforming the footprint. <br> Enhancing Lagos
+            <h3 class="text-[20px] md:text-[30px] leading-[1.2] font-[600] mb-[20px]">
+              Digitally transforming the footprint. <br />
+              Enhancing Lagos
             </h3>
             <p class="text-[14px] md:text-[16px]">
               <span class="block mb-[10px]">
                 As cutting-edge services and tech solutions continue to surge in
-                popularity, there's a growing need for cost-effective and
-                expansive bandwidth.
+                popularity, there's a growing need for cost-effective and expansive
+                bandwidth.
               </span>
 
               <span class="block mb-[10px]">
-                The government is at the forefront of this, tasked with
-                utilising technological advancements to enhance public services.
+                The government is at the forefront of this, tasked with utilising
+                technological advancements to enhance public services.
               </span>
 
               <span class="block mb-[10px]">
-                Our localised strategy and commitment to supporting the state's
-                fibre objectives and regulations position us as pioneers in this
-                digital revolution. This not only attracts foreign investment
-                but also enables the state's revival and strengthens the country
-                as a whole.
+                Our localised strategy and commitment to supporting the state's fibre
+                objectives and regulations position us as pioneers in this digital
+                revolution. This not only attracts foreign investment but also enables the
+                state's revival and strengthens the country as a whole.
               </span>
             </p>
 
             <div class="mt-[10px] md:mt-[20px]">
               <p class="text-[14px] md:text-[16px] mb-[10px] font-[600]">
-                In Lagos, our networks are fostering new opportunities,
-                including:
+                In Lagos, our networks are fostering new opportunities, including:
               </p>
               <ul class="ml-[20px] list-disc">
                 <li class="text-[14px] md:text-[16px]">
-                  Establishing inter-connected networks between educational
-                  institutions, libraries, government offices, and emergency
-                  response units.
+                  Establishing inter-connected networks between educational institutions,
+                  libraries, government offices, and emergency response units.
                 </li>
                 <li class="text-[14px] md:text-[16px]">
-                  Catering to the security, stability, performance, and
-                  accessibility requirements of public organisations while
-                  maximising cost savings and operational efficiency. Devising
-                  robust disaster recovery strategies.
+                  Catering to the security, stability, performance, and accessibility
+                  requirements of public organisations while maximising cost savings and
+                  operational efficiency. Devising robust disaster recovery strategies.
                 </li>
                 <li class="text-[14px] md:text-[16px]">
-                  Enabling the deployment of smart city initiatives that feature
-                  advanced monitoring, community-wide Wi-Fi, and public
-                  information systems.
+                  Enabling the deployment of smart city initiatives that feature advanced
+                  monitoring, community-wide Wi-Fi, and public information systems.
                 </li>
                 <li class="text-[14px] md:text-[16px]">
-                  Fostering regional investment and generating employment
-                  opportunities for the local population.
+                  Fostering regional investment and generating employment opportunities
+                  for the local population.
                 </li>
                 <li class="text-[14px] md:text-[16px]">
-                  Achieving a significant rise in social impact, aligned to
-                  elevate Lagos.
+                  Achieving a significant rise in social impact, aligned to elevate Lagos.
                 </li>
               </ul>
             </div>
           </div>
 
-          <div class="w-full h-[300px] md:h-[400px] bg-gray-100"></div>
+          <div class="w-full h-[250px] md:h-[400px]">
+            <img
+              src="../../assets/images/public-sector-1.jpg"
+              alt="afl network"
+              class="w-full h-full object-cover"
+            />
+          </div>
         </div>
 
         <div class="mt-[20px] md:mt-[40px]">
@@ -189,11 +174,7 @@
       </div>
     </section>
 
-
-    <section
-      class="bg-white"
-      :class="isRequirementFormShown ? 'py-[50px]' : null"
-    >
+    <section class="bg-white" :class="isRequirementFormShown ? 'py-[50px]' : null">
       <div class="w-[85%] xl:w-[1200px] mx-auto">
         <div class="mt-[20px]" v-if="isRequirementFormShown">
           <form
@@ -201,9 +182,7 @@
             class="grid grid-cols-1 md:grid-cols-2 gap-[10px] md:gap-[30px] w-full md:w-[750px] content-end"
           >
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >First name</label
               >
               <input
@@ -215,9 +194,7 @@
             </div>
 
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >Last name</label
               >
               <input
@@ -229,9 +206,7 @@
             </div>
 
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >Company name</label
               >
               <input
@@ -243,9 +218,7 @@
             </div>
 
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >Email</label
               >
               <input
@@ -257,9 +230,7 @@
             </div>
 
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >Phone</label
               >
               <input
@@ -271,9 +242,7 @@
             </div>
 
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >Business address</label
               >
               <input
@@ -285,9 +254,7 @@
             </div>
 
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >Size of business</label
               >
               <select
@@ -303,9 +270,7 @@
             </div>
 
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >Product interested in</label
               >
               <input
@@ -324,9 +289,7 @@
               ></textarea>
             </div>
 
-            <button class="bg-black text-white p-[10px] self-center">
-              Submit
-            </button>
+            <button class="bg-black text-white p-[10px] self-center">Submit</button>
           </form>
         </div>
       </div>
@@ -344,10 +307,10 @@
             >
               Check my address on the Network
             </h3>
-            <p class="text-[14px] md:text-[16px] text-white">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Dignissimos natus ex impedit voluptas, blanditiis voluptatem?
-            </p>
+            <!-- <p class="text-[14px] md:text-[16px] text-white">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos natus
+              ex impedit voluptas, blanditiis voluptatem?
+            </p> -->
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-[80%_1fr]">
@@ -370,17 +333,20 @@
     <section class="py-[50px] md:py-[100px] bg-white">
       <div class="w-[85%] xl:w-[1200px] mx-auto">
         <div class="w-full lg:w-[100%] mx-auto">
-          <h1
+          <!-- <h1
             class="text-center mb-[10px] text-[18px] md:text-[32px] font-[600] leading-[1.2]"
           >
             A range of providers to choose
-          </h1>
-          <p
-            class="text-center text-[14px] md:text-[16px] w-[100%] md:w-[700px] mx-auto"
+          </h1> -->
+          <h1
+            class="text-center mb-[10px] text-[18px] md:text-[32px] font-[600] leading-[1.2]"
           >
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse
-            quidem inventore officia, quam ducimus labore culpa nihil ipsa magni
-            in.
+            Connect to the AFL Networks
+          </h1>
+          <p class="text-center text-[14px] md:text-[16px] w-[100%] md:w-[700px] mx-auto">
+            Working with some of the Nigeria’s leading Telecommunications and ISPs, we’re
+            delivering full fibre-optic broadband connectivity directly into many homes
+            and businesses.
           </p>
         </div>
         <div class="mt-[20px] md:mt-[50px]">
@@ -406,8 +372,7 @@ export default {
 
 <style scoped>
 .get-connected-hero {
-  background-image: url(../../assets/images/bg3.jpg);
-  object-fit: cover;
+  background-image: url(../../assets/images/public-sector-hero.jpg);
   background-position: center;
   background-size: cover;
   position: relative;

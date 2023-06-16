@@ -2,9 +2,7 @@
   <div class="relative top-[48px] md:top-[92px]">
     <!--  -->
     <section class="h-[300px] md:h-[500px] about-us-hero">
-      <div
-        class="w-full h-full bg-black absolute top-0 left-0 opacity-[.7]"
-      ></div>
+      <div class="w-full h-full bg-black absolute top-0 left-0 opacity-[.7]"></div>
       <div class="absolute w-full h-full top-0 left-0">
         <div
           class="w-[85%] xl:w-[1200px] h-full flex flex-col justify-center mx-auto gap-[10px] md:gap-[40px]"
@@ -29,12 +27,10 @@
     <!--  -->
     <section class="py-[50px] md:py-[100px] bg-white">
       <div class="w-[85%] xl:w-[800px] mx-auto">
-        <h3 class="text-center font-[600] text-[20px] md:text-[34px]">
-          Get #Wired
-        </h3>
+        <h3 class="text-center font-[600] text-[20px] md:text-[34px]">Get #Wired</h3>
         <p class="text-center text-[14px] md:text-[16px]">
-          Begin your journey here into the future of the data age by joining us
-          in building the most advanced broadband network infrastructure.
+          Begin your journey here into the future of the data age by joining us in
+          building the most advanced broadband network infrastructure.
         </p>
 
         <div
@@ -115,32 +111,33 @@
         <div
           class="grid grid-cols-1 lg:grid-cols-2 gap-[50px] lg:gap-[100px] items-center"
         >
-          <div class="bg-black h-[400px] w-full"></div>
+          <div class="h-[250px] md:h-[400px] w-full">
+            <img
+              src="../../assets/images/wired.jpg"
+              alt="afl network"
+              class="w-full h-full object-cover"
+            />
+          </div>
 
           <div class="reverse">
-            <h3
-              class="text-[18px] md:text-[30px] font-[600] leading-[1.2] mb-[20px]"
-            >
+            <h3 class="text-[18px] md:text-[30px] font-[600] leading-[1.2] mb-[20px]">
               Wired
             </h3>
             <p class="text-[14px] md:text-[16px] leading-[1.5]">
               <span class="block mb-[10px]">
-                At ALF Networks, you won't find yourself constantly having to
-                troubleshoot or reboot the network to make it function properly.
-                Instead, we prioritise fostering a work environment grounded in
-                respect, professional growth, and ongoing employee support.
+                At ALF Networks, you won't find yourself constantly having to troubleshoot
+                or reboot the network to make it function properly. Instead, we prioritise
+                fostering a work environment grounded in respect, professional growth, and
+                ongoing employee support.
               </span>
               <span class="block mb-[10px]">
-                These principles are fundamental to ensuring that your career
-                with us is rewarding and fulfilling without the need for
-                constant intervention or updates. We offer much more than that.
-                Our team is already revolutionising the industry, and we are
-                searching for individuals ready to step up and help us take it
-                even further.
+                These principles are fundamental to ensuring that your career with us is
+                rewarding and fulfilling without the need for constant intervention or
+                updates. We offer much more than that. Our team is already revolutionising
+                the industry, and we are searching for individuals ready to step up and
+                help us take it even further.
               </span>
-              <span class="block">
-                Are you prepared to join us in getting WIRED?
-              </span>
+              <span class="block"> Are you prepared to join us in getting WIRED? </span>
             </p>
           </div>
         </div>
@@ -154,28 +151,32 @@
           class="grid grid-cols-1 lg:grid-cols-2 gap-[50px] lg:gap-[100px] items-center"
         >
           <div class="">
-            <h3
-              class="text-[18px] md:text-[30px] font-[600] leading-[1.2] mb-[20px]"
-            >
+            <h3 class="text-[18px] md:text-[30px] font-[600] leading-[1.2] mb-[20px]">
               Multiplicity and Inclusiveness
             </h3>
             <p class="text-[14px] md:text-[16px] leading-[1.5]">
               <span class="block mb-[10px]">
-                At AFL Networks, we place equal emphasis on cultivating an
-                inclusive workplace culture as we do on delivering superior
-                broadband service to millions of people.
+                At AFL Networks, we place equal emphasis on cultivating an inclusive
+                workplace culture as we do on delivering superior broadband service to
+                millions of people.
               </span>
               <span class="block">
-                We see ourselves as an integral part of the communities, towns,
-                and cities where we operate, and we welcome individuals from all
-                backgrounds to join us. We offer a wide range of opportunities
-                for individuals at every stage of their careers, regardless of
-                their level of experience. Be a part of our diverse team today.
+                We see ourselves as an integral part of the communities, towns, and cities
+                where we operate, and we welcome individuals from all backgrounds to join
+                us. We offer a wide range of opportunities for individuals at every stage
+                of their careers, regardless of their level of experience. Be a part of
+                our diverse team today.
               </span>
             </p>
           </div>
 
-          <div class="bg-black h-[400px] w-full"></div>
+          <div class="h-[250px] md:h-[400px] w-full">
+            <img
+              src="../../assets/images/inclusiveness.jpg"
+              alt="afl network"
+              class="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -186,27 +187,30 @@
         <div
           class="grid grid-cols-1 lg:grid-cols-2 gap-[50px] lg:gap-[100px] items-center"
         >
-          <div class="bg-black h-[400px] w-full"></div>
+          <div class="h-[250px] md:h-[400px] w-full">
+            <img
+              src="../../assets/images/opportunity-with-build-partners.jpg"
+              alt="afl network"
+              class="w-full h-full object-cover"
+            />
+          </div>
 
           <div class="reverse">
-            <h3
-              class="text-[18px] md:text-[30px] font-[600] leading-[1.2] mb-[20px]"
-            >
+            <h3 class="text-[18px] md:text-[30px] font-[600] leading-[1.2] mb-[20px]">
               Opportunities with our Build Partners
             </h3>
             <p class="text-[14px] md:text-[16px] leading-[1.5]">
               <span class="block mb-[10px]">
-                AFL Networks collaborates with Build and Installation Partners
-                to construct a high-speed broadband network suitable for the
-                demands of the modern data-driven era.
+                AFL Networks collaborates with Build and Installation Partners to
+                construct a high-speed broadband network suitable for the demands of the
+                modern data-driven era.
               </span>
               <span class="block">
-                We aim to ensure that our Build Partners share in our vision of
-                providing an ultra-reliable, seamless, dependable broadband
-                network that users will not even be aware of its presence.
-                Therefore, we are seeking to recruit a diverse range of
-                individuals with varying experience levels in the construction
-                industry to help us bring our new network to fruition.
+                We aim to ensure that our Build Partners share in our vision of providing
+                an ultra-reliable, seamless, dependable broadband network that users will
+                not even be aware of its presence. Therefore, we are seeking to recruit a
+                diverse range of individuals with varying experience levels in the
+                construction industry to help us bring our new network to fruition.
               </span>
             </p>
           </div>

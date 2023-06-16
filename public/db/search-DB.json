@@ -13,5 +13,75 @@
     "name": "Fibre-Optic network designed specifically for the digital era. In 2018, AFL Networks was established to revolutionise the industry, increase consumer options, and unleash communities' digital potential within our operating footprint.",
     "path": "/about-us",
     "location": "About us"
+  },
+  {
+    "name": "DEEPENING BROADBAND PENETRATION THROUGH OPEN ACCESS FIBRE-OPTIC NETWORK INFRASTRUCTURE",
+    "path": "/home",
+    "location": "Homepage"
+  },
+  {
+    "name": "Deep Fibre penetration with Carrier Class Services. AFL Networks is a modern, future-proof network in Lagos capable of delivering metro connectivity that reaches all data centers and landing stations at any bandwidth required. The network, with its ultra-low-latency connectivity can support real-time transmission of high-quality video including 4K and future quality video resolutions (8k, 16k etc). It can deliver support for public and private 5G and IoT and also for colocation of edge caching from AFL Networks Points-of-Presence.",
+    "path": "/home",
+    "location": "Homepage"
+  },
+  {
+    "name": "WHO WE ARE. Metro Aerial Fibre Infrastructure-as-a Service Provider. Aldreda Fields Ltd (AFL) is licensed by the Nigerian Communications Commission (NCC) to provide and operate Open Access Metropolitan Fibre Cable Network Services in Nigeria. Our objective is to deepen broadband penetration in Lagos through the provision of an Open Access fibre-optic network infrastructure. Our goal is to become an enabler to Lagos State Government, existing telecommunications companies, and internet service providers (ISPs) by providing a future-proof fibre optic infrastructure to transform Lagos state into a digital knowledge-based economy.",
+    "path": "/home",
+    "location": "Homepage"
+  },
+  {
+    "name": "OUR NETWORK. Revolutionising Broadband Connectivity in Lagos. Aldreda Fields Limited (AFL Networks) is deploying a state-of-the-art carrier grade open-access aerial Fibre-to-the-X (FTTX) network infrastructure using its exclusive right-of-way on EKO Electricity Distribution Company’s (EKEDC) electricity distribution poles in Lagos.",
+    "path": "/home",
+    "location": "Homepage"
+  },
+  {
+    "name": "Our rollout. Our company has designed a large open-access, fibre-only network in Lagos, covering millions of premises and offering services in various locations across our footprint. Our planned rollout will extend to over 1.2 million households, businesses, public sector sites, and 5G mobile sites.",
+    "path": "/about-us/our-rollout",
+    "location": "About us"
+  },
+  {
+    "name": "Our infrastructure. The way we plan our network. The way we build. The technology we use. The way we connect the metropolis",
+    "path": "/about-us/our-infrastructure",
+    "location": "About us"
+  },
+  {
+    "name": "Our platform. Universal accessibility. Round-the-clock service.",
+    "path": "/about-us/our-platform",
+    "location": "About us"
+  },
+  {
+    "name": "Our service",
+    "path": "/about-us/our-service",
+    "location": "About us"
+  },
+  {
+    "name": "Our solutions. Digital exchange or point of presence. Open access networks. Capacity services. Fibre to the home (FTTH). Dark fibre. Co-location. Virtual machines",
+    "path": "/our-solutions",
+    "location": "Our solutions"
+  },
+  {
+    "name": "Capacity services",
+    "path": "/our-solutions/capacity",
+    "location": "Capacity services"
+  },
+  {
+    "name": "Fibre to the home",
+    "path": "/our-solutions/fibre-to-the-home",
+    "location": "Fibre to the home"
+  },
+  {
+    "name": "Dark fibre",
+    "path": "/our-solutions/dark-fibre",
+    "location": "Dark fibre"
+  },
+  {
+    "name": "Co-location. Co location",
+    "path": "/our-solutions/co-location",
+    "location": "Co-location"
+  },
+  {
+    "name": "Virtual machines",
+    "path": "/our-solutions/virtual-machines",
+    "location": "Virtual machines"
   }
 ]

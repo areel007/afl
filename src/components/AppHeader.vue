@@ -1,42 +1,59 @@
+<script setup>
+import { useRoute } from "vue-router";
+
+const route = useRoute();
+
+defineProps(["showMobileMenu", "navMenu"]);
+
+// export default {
+//   name: "AppHeader",
+//   props: ["showMobileMenu", "navMenu"],
+// };
+</script>
+
 <template>
   <header
     class="w-full absolute z-[1000] top-0 shadow-none"
     :class="$route.path === '/' ? 'bg-transparent' : 'bg-white !shadow-md'"
+    v-if="route.path !== '/'"
   >
     <div class="w-[90%] xl:w-[1200px] mx-auto py-[10px] md:py-[20px]">
       <div class="flex justify-between items-center">
         <router-link to="/">
-          <img
+          <!-- <img
             src="../assets/images/logo-afl.png"
             class="w-[100px] md:w-[180px]"
             alt="afl"
             v-if="$route.path === '/'"
-          />
+          /> -->
           <img
-            src="../assets/images/afl-logo-white-bg.png"
+            src="../assets/images/afl-networks-logo.png"
             class="w-[100px] md:w-[180px]"
             alt="afl"
-            v-else
           />
         </router-link>
 
         <nav class="hidden lg:block text-white">
           <ul class="flex items-center gap-[10px] lg:gap-[20px]">
             <li
-              class="text-[14px] font-[400]"
-              :class="$route.path === '/' ? 'text-white' : 'text-[#67be68]'"
+              class="text-[14px] font-[400] text-[#2A2760]"
+              :class="
+                $route.path.includes(_link.url)
+                  ? 'text-[#6CC06D] font-[700]'
+                  : 'text-[#2A2760]'
+              "
               v-for="(_link, index) in navMenu"
               :key="index"
             >
-              <router-link :to="_link.url">{{ _link.navName }}</router-link>
+              <a :href="_link.url">{{ _link.navName }}</a>
             </li>
           </ul>
         </nav>
 
-        <div class="flex items-center  cursor-pointer relative gap-[10px] lg:gap-[80px]">
+        <div class="flex items-center cursor-pointer relative gap-[10px] lg:gap-[80px]">
           <div class="portal">
             <button
-              class="p-[8px_20px] text-white bg-[#67be68] text-[14px] border border-transparent hidden lg:flex items-center gap-[5px] hover:shadow-xl portal-btn w-full justify-between rounded-full"
+              class="p-[8px_20px] text-white bg-[#2A2760] text-[14px] border border-transparent hidden lg:flex items-center gap-[5px] hover:shadow-xl portal-btn w-full justify-between rounded-full"
             >
               <span>Portals</span>
               <svg
@@ -56,7 +73,7 @@
             </button>
 
             <div
-              class="absolute top-[0] text-white bg-[#67be68] shadow-lg p-[20px] text-[14px] portal-dropdown rounded-md z-[10]"
+              class="absolute top-[0] text-white bg-[#2A2760] shadow-lg p-[20px] text-[14px] portal-dropdown rounded-md z-[10]"
             >
               <a href="/">Client Portal</a>
               <a href="/">Customer Portal</a>
@@ -71,7 +88,7 @@
             stroke-width="1.5"
             stroke="currentColor"
             class="w-4 md:w-6 h-4 md:h-6 text-white"
-            :class="$route.path === '/' ? 'text-white' : '!text-[#6CC06D]'"
+            :class="$route.path === '/' ? 'text-white' : '!text-[#2A2760]'"
             @click="$emit('show-search')"
           >
             <path
@@ -89,7 +106,7 @@
             stroke-width="1.5"
             stroke="currentColor"
             class="w-5 md:w-6 h-5 md:h-6 block lg:hidden text-white"
-            :class="$route.path === '/' ? 'text-white' : '!text-[#6CC06D]'"
+            :class="$route.path === '/' ? 'text-white' : '!text-[#2A2760]'"
             @click="$emit('open-mobile-menu')"
             v-if="!showMobileMenu"
           >
@@ -108,7 +125,7 @@
             stroke-width="1.5"
             stroke="currentColor"
             class="w-5 md:w-6 h-5 md:h-6 text-white"
-            :class="$route.path === '/' ? 'text-white' : '!text-[#6CC06D]'"
+            :class="$route.path === '/' ? 'text-white' : '!text-[#2A2760]'"
             v-else
             @click="$emit('close-mobile-menu')"
           >
@@ -123,13 +140,6 @@
     </div>
   </header>
 </template>
-
-<script>
-export default {
-  name: "AppHeader",
-  props: ["showMobileMenu", "navMenu"],
-};
-</script>
 
 <style scoped>
 .portal-dropdown {

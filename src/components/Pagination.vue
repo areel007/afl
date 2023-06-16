@@ -66,7 +66,7 @@ export default {
   methods: {
     getResources() {
       axios
-        .get("https://afl-server.onrender.com/api/v1/news")
+        .get("http://localhost:5000/api/v1/news")
         .then((res) => {
           this.resourcesLength = res.data.resourceLength;
           this.newsPerPage = res.data.newsPerPage;

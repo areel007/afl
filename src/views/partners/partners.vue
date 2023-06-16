@@ -7,18 +7,14 @@
           <ul class="flex items-center gap-[5px] xl:gap-[20px] text-[14px]">
             <li
               class="text-[#383B63] p-[10px] hover:bg-[#6DC06E] hover:text-white cursor-pointer"
-              :class="
-                $route.path === '/partners' ? 'bg-[#6CC06D] text-white' : null
-              "
+              :class="$route.path === '/partners' ? 'bg-[#6CC06D] text-white' : null"
             >
               <router-link to="/partners" class="">Partners</router-link>
             </li>
             <li
               class="text-[#383B63] p-[10px] hover:bg-[#6DC06E] hover:text-white cursor-pointer"
             >
-              <router-link to="/partners/mobile-operators"
-                >Mobile Operators</router-link
-              >
+              <router-link to="/partners/mobile-operators">Mobile Operators</router-link>
             </li>
             <li
               class="text-[#383B63] p-[10px] hover:bg-[#6DC06E] hover:text-white cursor-pointer"
@@ -30,9 +26,7 @@
             <li
               class="text-[#383B63] p-[10px] hover:bg-[#6DC06E] hover:text-white cursor-pointer"
             >
-              <router-link to="/partners/public-sector"
-                >Public Sector</router-link
-              >
+              <router-link to="/partners/public-sector">Public Sector</router-link>
             </li>
             <li
               class="text-[#383B63] p-[10px] hover:bg-[#6DC06E] hover:text-white cursor-pointer"
@@ -46,9 +40,7 @@
 
     <!--  -->
     <section class="h-[300px] md:h-[500px] get-connected-hero">
-      <div
-        class="w-full h-full bg-black absolute top-0 left-0 opacity-[.7]"
-      ></div>
+      <div class="w-full h-full bg-black absolute top-0 left-0 opacity-[.7]"></div>
       <div class="absolute w-full h-full top-0 left-0">
         <div
           class="w-[85%] xl:w-[1200px] h-full flex flex-col justify-center mx-auto gap-[10px] md:gap-[40px]"
@@ -73,27 +65,31 @@
           class="grid grid-cols-1 md:grid-cols-2 gap-[30px] md:gap-[100px] items-start"
         >
           <div>
-            <h3
-              class="text-[20px] md:text-[30px] leading-[1.2] font-[600] mb-[20px]"
-            >
+            <h3 class="text-[20px] md:text-[30px] leading-[1.2] font-[600] mb-[20px]">
               The strength of collaboration. <br class="hidden md:block" />
               One network serving all!
             </h3>
             <p class="text-[14px] md:text-[16px]">
               Collaboration is at the core of AFL Networks' philosophy. It means
-              disrupting the norm and advocating for improved outcomes for our
-              partners and their clients.
+              disrupting the norm and advocating for improved outcomes for our partners
+              and their clients.
               <br /><br />
-              Our goal is to instil trust in our partners by actively listening
-              to their unique requirements. We prioritise honesty and
-              transparency, viewing obstacles as opportunities for growth.
+              Our goal is to instil trust in our partners by actively listening to their
+              unique requirements. We prioritise honesty and transparency, viewing
+              obstacles as opportunities for growth.
               <br /><br />
-              Additionally, we acknowledge our limitations and work with our
-              partners to provide seamless, empowering connectivity for all.
+              Additionally, we acknowledge our limitations and work with our partners to
+              provide seamless, empowering connectivity for all.
             </p>
           </div>
 
-          <div class="w-full h-[300px] md:h-[400px] bg-gray-100"></div>
+          <div class="w-full h-[250px] md:h-[400px]">
+            <img
+              src="../../assets/images/strength-of-collaboration.jpg"
+              alt="afl network"
+              class="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -104,7 +100,13 @@
         <div
           class="grid grid-cols-1 md:grid-cols-2 gap-[30px] md:gap-[100px] items-start"
         >
-          <div class="w-full h-[300px] md:h-[400px] bg-gray-100"></div>
+          <div class="w-full h-[250px] md:h-[400px]">
+            <img
+              src="../../assets/images/our-product.jpg"
+              alt="afl network"
+              class="w-full h-full object-cover"
+            />
+          </div>
 
           <div class="reverse">
             <h3
@@ -114,17 +116,16 @@
             </h3>
             <ul class="ml-[20px] list-disc">
               <li class="text-[14px] md:text-[16px] mb-[10px]">
-                <b>Dark Fibre</b> - Illuminate your potential with our
-                high-capacity connections and establish your own infrastructure
-                and value.
+                <b>Dark Fibre</b> - Illuminate your potential with our high-capacity
+                connections and establish your own infrastructure and value.
               </li>
               <li class="text-[14px] md:text-[16px] mb-[10px]">
-                <b>Ethernet Elite Business Connectivity:</b> Dedicated, safe,
-                swift, adaptable, and constantly available.
+                <b>Ethernet Elite Business Connectivity:</b> Dedicated, safe, swift,
+                adaptable, and constantly available.
               </li>
               <li class="text-[14px] md:text-[16px]">
-                <b>Broadband:</b> unwavering connections, so dependable they
-                become second nature.
+                <b>Broadband:</b> unwavering connections, so dependable they become second
+                nature.
               </li>
             </ul>
           </div>
@@ -168,9 +169,7 @@
             class="grid grid-cols-1 md:grid-cols-2 gap-[10px] md:gap-[30px] w-full md:w-[750px] content-end"
           >
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >First name</label
               >
               <input
@@ -182,9 +181,7 @@
             </div>
 
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >Last name</label
               >
               <input
@@ -196,9 +193,7 @@
             </div>
 
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >Company name</label
               >
               <input
@@ -210,9 +205,7 @@
             </div>
 
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >Email</label
               >
               <input
@@ -224,9 +217,7 @@
             </div>
 
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >Phone</label
               >
               <input
@@ -238,9 +229,7 @@
             </div>
 
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >Business address</label
               >
               <input
@@ -252,9 +241,7 @@
             </div>
 
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >Size of business</label
               >
               <select
@@ -270,9 +257,7 @@
             </div>
 
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >Product interested in</label
               >
               <input
@@ -291,9 +276,7 @@
               ></textarea>
             </div>
 
-            <button class="bg-black text-white p-[10px] self-center">
-              Submit
-            </button>
+            <button class="bg-black text-white p-[10px] self-center">Submit</button>
           </form>
         </div>
       </div>
@@ -311,10 +294,10 @@
             >
               Check my address on the Network
             </h3>
-            <p class="text-[14px] md:text-[16px] text-white">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Dignissimos natus ex impedit voluptas, blanditiis voluptatem?
-            </p>
+            <!-- <p class="text-[14px] md:text-[16px] text-white">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos natus
+              ex impedit voluptas, blanditiis voluptatem?
+            </p> -->
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-[80%_1fr]">
@@ -340,14 +323,12 @@
           <h1
             class="text-center mb-[10px] text-[18px] md:text-[32px] font-[600] leading-[1.2]"
           >
-            A range of providers to choose
+            Connect to the AFL Networks
           </h1>
-          <p
-            class="text-center text-[14px] md:text-[16px] w-[100%] md:w-[700px] mx-auto"
-          >
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse
-            quidem inventore officia, quam ducimus labore culpa nihil ipsa magni
-            in.
+          <p class="text-center text-[14px] md:text-[16px] w-[100%] md:w-[700px] mx-auto">
+            Working with some of the Nigeria’s leading Telecommunications and ISPs, we’re
+            delivering full fibre-optic broadband connectivity directly into many homes
+            and businesses.
           </p>
         </div>
         <div class="mt-[20px] md:mt-[50px]">

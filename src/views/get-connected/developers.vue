@@ -7,9 +7,7 @@
             <li
               class="text-[#383B63] p-[10px] hover:bg-[#6DC06E] hover:text-white cursor-pointer"
               :class="
-                $route.path === '/get-connected/homes'
-                  ? 'bg-[#6CC06D] text-white'
-                  : null
+                $route.path === '/get-connected/homes' ? 'bg-[#6CC06D] text-white' : null
               "
             >
               <router-link to="/get-connected/homes" class=""
@@ -45,9 +43,7 @@
             <li
               class="text-[#383B63] p-[10px] hover:bg-[#6DC06E] hover:text-white cursor-pointer"
             >
-              <router-link to="/get-connected/public"
-                >Public Sectors</router-link
-              >
+              <router-link to="/get-connected/public">Public Sectors</router-link>
             </li>
           </ul>
           <button class="p-[10px] bg-[#383B63] text-white text-[14px]">
@@ -59,9 +55,7 @@
 
     <!--  -->
     <section class="h-[300px] md:h-[500px] get-connected-hero">
-      <div
-        class="w-full h-full bg-black absolute top-0 left-0 opacity-[.7]"
-      ></div>
+      <div class="w-full h-full bg-black absolute top-0 left-0 opacity-[.5]"></div>
       <div class="absolute w-full h-full top-0 left-0">
         <div
           class="w-[85%] xl:w-[1200px] h-full flex flex-col justify-center mx-auto gap-[10px] md:gap-[40px]"
@@ -72,13 +66,13 @@
             >
               Enabling open access metro fibre broadband
             </h1>
-            <p
+            <!-- <p
               class="text-[14px] md:text-[16px] text-white leading-[1] font-[300]"
             >
               Enter your address to find out how you can get connected
-            </p>
+            </p> -->
           </div>
-          <div
+          <!-- <div
             class="w-[100%] md:w-[700px] grid grid-cols-1 sm:grid-cols-[80%_1fr] items-start"
           >
             <input
@@ -89,7 +83,7 @@
             <button class="p-[7px_10px] bg-[#6CC06D] text-white">
               Check now
             </button>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -97,38 +91,33 @@
     <!--  -->
     <section
       class="p-[50px_0_50px_0] md:p-[100px_0_100px_0] bg-white"
-      :class="
-        isRequirementFormShown ? '!p-[50px_0_0_0] md:!p-[100px_0_0_0]' : null
-      "
+      :class="isRequirementFormShown ? '!p-[50px_0_0_0] md:!p-[100px_0_0_0]' : null"
     >
       <div class="w-[85%] xl:w-[1200px] mx-auto">
         <div
-          class="grid grid-cols-1 lg:grid-cols-[60%_1fr] gap-[30px] md:gap-[50px] items-start"
+          class="grid grid-cols-1 lg:grid-cols-[1fr_450px] gap-[30px] md:gap-[50px] items-start"
         >
           <div>
-            <h3
-              class="text-[20px] md:text-[30px] leading-[1.2] font-[600] mb-[20px]"
-            >
+            <h3 class="text-[20px] md:text-[30px] leading-[1.2] font-[600] mb-[20px]">
               Enhance the appeal of your homes
             </h3>
             <p class="text-[14px] md:text-[16px]">
               <span class="block mb-[10px]">
-                Proper access to fast and dependable internet is a significant
-                aspect that affects homebuyers' decisions on where to reside.
+                Proper access to fast and dependable internet is a significant aspect that
+                affects homebuyers' decisions on where to reside.
               </span>
 
               <span class="block mb-[10px]">
-                Many homebuyers consider inadequate internet as one of the main
-                reasons not to move to a particular area. By providing your
-                development with the most advanced Fibre-Optic network
-                available, you instantly increase its appeal to prospective
-                buyers.
+                Many homebuyers consider inadequate internet as one of the main reasons
+                not to move to a particular area. By providing your development with the
+                most advanced Fibre-Optic network available, you instantly increase its
+                appeal to prospective buyers.
               </span>
 
               <span class="block mb-[10px]">
-                Additionally, as Fibre-Optic is installed from the beginning,
-                there won't be any disruptive excavation to enhance the network
-                since Fibre-Optic offers almost limitless potential.
+                Additionally, as Fibre-Optic is installed from the beginning, there won't
+                be any disruptive excavation to enhance the network since Fibre-Optic
+                offers almost limitless potential.
               </span>
             </p>
 
@@ -138,22 +127,26 @@
               </p>
               <ul class="list-disc ml-[20px]">
                 <li class="text-[14px] md:text-[16px] mb-[10px]">
-                  Enhance the desirability of your development with advanced
-                  Fibre.
+                  Enhance the desirability of your development with advanced Fibre.
                 </li>
                 <li class="text-[14px] md:text-[16px] mb-[10px]">
-                  Optic technology- Future-proof your development with a network
-                  capable of adapting to digital advancements.
+                  Optic technology- Future-proof your development with a network capable
+                  of adapting to digital advancements.
                 </li>
                 <li class="text-[14px] md:text-[16px]">
-                  Align with the government's objective for deeper fibre
-                  coverage.
+                  Align with the government's objective for deeper fibre coverage.
                 </li>
               </ul>
             </div>
           </div>
 
-          <div class="w-full h-[300px] md:h-[400px] bg-gray-100"></div>
+          <div class="w-full h-[250px] md:h-[400px]">
+            <img
+              src="../../assets/images/enhance-appeal-of-your-home.jpg"
+              alt="afl network"
+              class="w-full h-full object-cover"
+            />
+          </div>
         </div>
 
         <div class="mt-[20px] md:mt-[40px]">
@@ -177,10 +170,7 @@
     </section>
 
     <!--  -->
-    <section
-      class="bg-white"
-      :class="isRequirementFormShown ? 'py-[50px]' : null"
-    >
+    <section class="bg-white" :class="isRequirementFormShown ? 'py-[50px]' : null">
       <div class="w-[85%] xl:w-[1200px] mx-auto">
         <div class="mt-[20px]" v-if="isRequirementFormShown">
           <form
@@ -188,9 +178,7 @@
             class="grid grid-cols-1 md:grid-cols-2 gap-[10px] md:gap-[30px] w-full md:w-[750px] content-end"
           >
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >First name</label
               >
               <input
@@ -202,9 +190,7 @@
             </div>
 
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >Last name</label
               >
               <input
@@ -216,9 +202,7 @@
             </div>
 
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >Company name</label
               >
               <input
@@ -230,9 +214,7 @@
             </div>
 
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >Email</label
               >
               <input
@@ -244,9 +226,7 @@
             </div>
 
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >Phone</label
               >
               <input
@@ -258,9 +238,7 @@
             </div>
 
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >Business address</label
               >
               <input
@@ -272,9 +250,7 @@
             </div>
 
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >Size of business</label
               >
               <select
@@ -290,9 +266,7 @@
             </div>
 
             <div class="w-full">
-              <label
-                for=""
-                class="font-[600] text-[14px] text-black mb-[5px] block"
+              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
                 >Product interested in</label
               >
               <input
@@ -311,9 +285,7 @@
               ></textarea>
             </div>
 
-            <button class="bg-black text-white p-[10px] self-center">
-              Submit
-            </button>
+            <button class="bg-black text-white p-[10px] self-center">Submit</button>
           </form>
         </div>
       </div>
@@ -331,10 +303,10 @@
             >
               Check my address on the Network
             </h3>
-            <p class="text-[14px] md:text-[16px] text-white">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Dignissimos natus ex impedit voluptas, blanditiis voluptatem?
-            </p>
+            <!-- <p class="text-[14px] md:text-[16px] text-white">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos natus
+              ex impedit voluptas, blanditiis voluptatem?
+            </p> -->
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-[80%_1fr]">
@@ -360,14 +332,12 @@
           <h1
             class="text-center mb-[10px] text-[18px] md:text-[32px] font-[600] leading-[1.2]"
           >
-            A range of providers to choose
+            Connect to the AFL Networks
           </h1>
-          <p
-            class="text-center text-[14px] md:text-[16px] w-[100%] md:w-[700px] mx-auto"
-          >
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse
-            quidem inventore officia, quam ducimus labore culpa nihil ipsa magni
-            in.
+          <p class="text-center text-[14px] md:text-[16px] w-[100%] md:w-[700px] mx-auto">
+            Working with some of the Nigeria’s leading Telecommunications and ISPs, we’re
+            delivering full fibre-optic broadband connectivity directly into many homes
+            and businesses.
           </p>
         </div>
         <div class="mt-[20px] md:mt-[50px]">
@@ -393,8 +363,7 @@ export default {
 
 <style scoped>
 .get-connected-hero {
-  background-image: url(../../assets/images/bg3.jpg);
-  object-fit: cover;
+  background-image: url(../../assets/images/property-developer-hero.jpg);
   background-position: center;
   background-size: cover;
   position: relative;

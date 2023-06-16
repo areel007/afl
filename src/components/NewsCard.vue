@@ -1,6 +1,6 @@
 <template>
-  <a
-    href="/"
+  <router-link
+    :to="`/communication/news/${id}`"
     class="w-full flex flex-col bg-white hover:scale-105 transition shadow-md"
   >
     <img :src="imgUrl" alt="afl news" class="h-[300px] w-full object-cover" />
@@ -13,14 +13,14 @@
       </h3>
       <span class="text-[14px] text-gray-600">{{ this.formatedDate }}</span>
     </div>
-  </a>
+  </router-link>
 </template>
 
 <script>
 import moment from "moment";
 export default {
   name: "NewsCard",
-  props: ["category", "title", "date", "imgUrl"],
+  props: ["category", "title", "date", "imgUrl", 'id'],
 
   data() {
     return {

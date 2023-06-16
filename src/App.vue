@@ -16,9 +16,7 @@
       @open-mobile-menu="openMobileMenu"
       @close-mobile-menu="closeMobileMenu"
       @show-search="showSearch"
-      v-if="
-        $route.path.split('/')[1] !== 'admin' && $route.name !== 'pageNotFound'
-      "
+      v-if="$route.path.split('/')[1] !== 'admin' && $route.name !== 'pageNotFound'"
     />
     <MobileMenu
       :show-mobile-menu="showMobileMenu"
@@ -30,6 +28,7 @@
       @choose-step-four="chooseStepFour"
       @choose-step-five="chooseStepFive"
       @choose-step-six="chooseStepSix"
+      @choose-step-seven="chooseStepSeven"
     />
     <router-view />
     <AppFooter :nav-menu="navMenu" />
@@ -57,6 +56,10 @@ export default {
           url: "/about-us",
         },
         {
+          navName: "Our Solutions",
+          url: "/our-solutions",
+        },
+        {
           navName: "Get Connected",
           url: "/get-connected/homes",
         },
@@ -64,10 +67,10 @@ export default {
           navName: "Partners",
           url: "/partners",
         },
-        {
-          navName: "Communication",
-          url: "/communication/news",
-        },
+        // {
+        //   navName: "Communication",
+        //   url: "#",
+        // },
         {
           navName: "Careers",
           url: "/careers",
@@ -108,6 +111,9 @@ export default {
     },
     chooseStepSix() {
       this.step = 6;
+    },
+    chooseStepSeven() {
+      this.step = 7;
     },
     showSearch() {
       this.isSearchShown = true;

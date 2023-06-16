@@ -8,9 +8,7 @@
             <li
               class="text-[#383B63] p-[10px] hover:bg-[#6DC06E] hover:text-white cursor-pointer"
               :class="
-                $route.path === '/communication/news'
-                  ? 'bg-[#6CC06D] text-white'
-                  : null
+                $route.path === '/communication/news' ? 'bg-[#6CC06D] text-white' : null
               "
             >
               <router-link to="/communication/news">News</router-link>
@@ -18,9 +16,7 @@
             <li
               class="text-[#383B63] p-[10px] hover:bg-[#6DC06E] hover:text-white cursor-pointer"
             >
-              <router-link to="/communication/contact-us"
-                >Contact us</router-link
-              >
+              <router-link to="/communication/contact-us">Contact us</router-link>
             </li>
           </ul>
         </div>
@@ -29,9 +25,7 @@
 
     <!--  -->
     <section class="h-[300px] md:h-[500px] about-us-hero">
-      <div
-        class="w-full h-full bg-black absolute top-0 left-0 opacity-[.7]"
-      ></div>
+      <div class="w-full h-full bg-black absolute top-0 left-0 opacity-[.7]"></div>
       <div class="absolute w-full h-full top-0 left-0">
         <div
           class="w-[85%] xl:w-[1200px] h-full flex flex-col justify-center mx-auto gap-[10px] md:gap-[40px]"
@@ -59,23 +53,24 @@
       <div class="w-[85%] xl:w-[1200px] mx-auto">
         <SearchFilter @filter-action="filterAction" />
 
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px]">
-          <NewsCard
-            v-for="(_news, index) in news"
-            :key="index"
-            :category="_news.category"
-            :title="_news.title"
-            :date="_news.createdAt"
-            :img-url="_news.imageUrl"
-          />
+        <div class="" v-if="news === null">
+          <Spinner />
         </div>
+        <div class="" v-else>
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px]">
+            <NewsCard
+              v-for="(_news, index) in news"
+              :key="index"
+              :category="_news.category"
+              :title="_news.title"
+              :date="_news.createdAt"
+              :img-url="_news.imageUrl"
+              :id="_news._id"
+            />
+          </div>
 
-        <Pagination
-          @get-page="getPage"
-          :step="step"
-          @prev="prev"
-          @next="next"
-        />
+          <Pagination @get-page="getPage" :step="step" @prev="prev" @next="next" />
+        </div>
       </div>
     </section>
   </div>
@@ -87,19 +82,20 @@ import { onMounted, ref } from "vue";
 import NewsCard from "../../components/NewsCard.vue";
 import Pagination from "../../components/Pagination.vue";
 import SearchFilter from "../../components/SearchFilter.vue";
+import Spinner from "../../components/Spinner.vue";
 
 const news = ref(null);
 const step = ref(0);
 
 const getAllNews = async () => {
-  const _news = await axios.get("https://afl-server.onrender.com/api/v1/news");
+  const _news = await axios.get("http://localhost:5000/api/v1/news");
 
   news.value = _news.data.msg;
 };
 
 const getPage = async (e) => {
   const response = await axios.get(
-    `https://afl-server.onrender.com/api/v1/news?p=${e.target.innerHTML - 1}`
+    `http:localhost:5000/api/v1/news?p=${e.target.innerHTML - 1}`
   );
 
   news.value = response.data.msg;
@@ -109,7 +105,7 @@ const getPage = async (e) => {
 
 const prev = async () => {
   const st = parseInt(step.value - 1);
-  const response = await axios.get(`https://afl-server.onrender.com/api/v1/news?p=${st}`);
+  const response = await axios.get(`http://localhost:5000/api/v1/news?p=${st}`);
 
   news.value = response.data.msg;
 
@@ -118,7 +114,7 @@ const prev = async () => {
 
 const next = async () => {
   const st = parseInt(step.value + 1);
-  const response = await axios.get(`https://afl-server.onrender.com/api/v1/news?p=${st}`);
+  const response = await axios.get(`http://localhost:5000/api/v1/news?p=${st}`);
 
   news.value = response.data.msg;
 
@@ -127,15 +123,13 @@ const next = async () => {
 
 const filterAction = async (e) => {
   if (e.trim().length > 0) {
-    const _news = await axios.get(
-      "https://afl-server.onrender.com/api/v1/news/dashboard"
-    );
+    const _news = await axios.get("http://localhost:5000/api/v1/news/dashboard");
 
     news.value = _news.data.msg.filter((_res) =>
       _res.title.toLowerCase().includes(e.toLowerCase())
     );
   } else {
-    const _news = await axios.get("https://afl-server.onrender.com/api/v1/news");
+    const _news = await axios.get("http://localhost:5000/api/v1/news");
 
     getAllNews();
   }
