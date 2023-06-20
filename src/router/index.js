@@ -454,6 +454,24 @@ const routes = [
         path: "/admin/dashboard/register",
         component: () => import("../views/admin/availability/register.vue"),
       },
+      {
+        path: "/admin/dashboard/jobs",
+        component: () => import("../views/admin/jobs.vue"),
+        children: [
+          {
+            path: "/admin/dashboard/jobs",
+            component: () => import("../views/admin/jobs/all-jobs.vue")
+          },
+          {
+            path: "/admin/dashboard/add-job",
+            component: () => import("../views/admin/jobs/add-jobs.vue")
+          },
+          {
+            path: "/admin/dashboard/applications",
+            component: () => import("../views/admin/jobs/applications.vue")
+          }
+        ]
+      },
     ],
   },
 
