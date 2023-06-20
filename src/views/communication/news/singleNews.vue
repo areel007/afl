@@ -2,7 +2,7 @@
   <div class="relative top-[48px] md:top-[92px]" style="min-height: 70vh">
     <div class="w-[85%] xl:w-[1200px] mx-auto">
       <div class="py-[50px] md:py-[100px]">
-        <div v-if="news.length === 0">
+        <div v-if="news.title === undefined">
           <Spinner />
         </div>
         <div class="w-[100%] sm:w-[800px]" v-else>
@@ -42,7 +42,7 @@ export default {
 
   data() {
     return {
-      news: [],
+      news: {},
     };
   },
 
@@ -52,8 +52,6 @@ export default {
     );
 
     this.news = news.data.msg;
-
-    console.log(this.news);
   },
 };
 </script>

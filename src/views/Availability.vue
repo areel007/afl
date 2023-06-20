@@ -14,8 +14,8 @@
           Thanks for your interest, we haven't planned your area at the moment.
         </h1>
         <p class="text-[14px] md:text-[16px] w-[100%] lg:w-[900px] mb-[20px]">
-          To be the first to know when we are coming to your street and when you
-          can access full fibre broadband, please sign up with us for updates.
+          To be the first to know when we are coming to your street and when you can
+          access full fibre broadband, please sign up with us for updates.
         </p>
         <button
           class="bg-black p-[10px_20px] text-white rounded-md font-[300] text-[14px]"
@@ -34,19 +34,28 @@
             Register with us today
           </h2>
           <p class="text-center text-[14px]">
-            Be the first to know when you can connect to our netword by
-            registering below.
+            Be the first to know when you can connect to our netword by registering below.
           </p>
         </div>
 
         <form
           action=""
-          class="w-[95%] xl:w-[1100px] mx-auto grid grid-cols-2 md:grid-cols-5 gap-[10px]"
+          class="w-[95%] xl:w-[1100px] mx-auto grid grid-cols-2 md:grid-cols-3 gap-[10px]"
         >
           <div class="w-full">
-            <label
-              for=""
-              class="font-[600] text-[14px] text-black mb-[5px] block"
+            <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
+              >Area</label
+            >
+            <input
+              type="text"
+              placeholder="John"
+              required
+              class="text-[14px] p-[10px] border border-gray-300 w-full"
+              :value="$route.query.selectedAddress"
+            />
+          </div>
+          <div class="w-full">
+            <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
               >First name</label
             >
             <input
@@ -54,13 +63,12 @@
               placeholder="John"
               required
               class="text-[14px] p-[10px] border border-gray-300 w-full"
+              v-model="firstname"
             />
           </div>
 
           <div class="w-full">
-            <label
-              for=""
-              class="font-[600] text-[14px] text-black mb-[5px] block"
+            <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
               >Last name</label
             >
             <input
@@ -68,13 +76,12 @@
               placeholder="Smith"
               required
               class="text-[14px] p-[10px] border border-gray-300 w-full"
+              v-model="lastname"
             />
           </div>
 
           <div class="w-full">
-            <label
-              for=""
-              class="font-[600] text-[14px] text-black mb-[5px] block"
+            <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
               >Email</label
             >
             <input
@@ -82,13 +89,12 @@
               placeholder="e.g. john@afl.com"
               required
               class="text-[14px] p-[10px] border border-gray-300 w-full"
+              v-model="email"
             />
           </div>
 
           <div class="w-full">
-            <label
-              for=""
-              class="font-[600] text-[14px] text-black mb-[5px] block"
+            <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
               >Phone</label
             >
             <input
@@ -96,11 +102,18 @@
               placeholder="+234 80xx"
               required
               class="text-[14px] p-[10px] border border-gray-300 w-full"
+              v-model="phone"
             />
           </div>
 
-          <button class="bg-black text-white p-[10px] self-end">Submit</button>
+          <button class="bg-black text-white p-[10px] self-end" @click.prevent="submit">
+            Submit
+          </button>
         </form>
+
+        <div class="w-[95%] xl:w-[1100px] mx-auto mt-[20px]">
+          <p class="text-[#2A2760]">{{ msg }}</p>
+        </div>
       </div>
     </div>
 
@@ -117,3 +130,39 @@
     </div>
   </div>
 </template>
+
+<script>
+import axios from "axios";
+export default {
+  name: "available",
+  data() {
+    return {
+      firstname: "",
+      lastname: "",
+      email: "",
+      phone: "",
+      msg: "",
+    };
+  },
+  methods: {
+    async submit() {
+      const response = await axios.post(
+        "https://afl-server.onrender.com/api/v1/area-register",
+        {
+          firstname: this.firstname,
+          lastname: this.lastname,
+          email: this.email,
+          phone: this.phone,
+          area: this.$route.query.selectedAddress,
+        }
+      );
+      this.msg = response.data.msg;
+      this.lastname = "";
+      this.firstname = "";
+      this.email = "";
+      this.phone = "";
+      setTimeout(() => (this.msg = ""), 4000);
+    },
+  },
+};
+</script>

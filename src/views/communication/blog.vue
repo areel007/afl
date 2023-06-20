@@ -69,7 +69,7 @@
             />
           </div>
 
-          <Pagination @get-page="getPage" :step="step" @prev="prev" @next="next" />
+          <!-- <Pagination @get-page="getPage" :step="step" @prev="prev" @next="next" /> -->
         </div>
       </div>
     </section>
@@ -88,14 +88,15 @@ const news = ref(null);
 const step = ref(0);
 
 const getAllNews = async () => {
-  const _news = await axios.get("http://localhost:5000/api/v1/news");
+  const _news = await axios.get("https://afl-server.onrender.com/api/v1/news");
 
   news.value = _news.data.msg;
+  console.log(news.value);
 };
 
 const getPage = async (e) => {
   const response = await axios.get(
-    `http:localhost:5000/api/v1/news?p=${e.target.innerHTML - 1}`
+    `https://afl-server.onrender.com/api/v1/news?p=${e.target.innerHTML - 1}`
   );
 
   news.value = response.data.msg;
@@ -105,7 +106,7 @@ const getPage = async (e) => {
 
 const prev = async () => {
   const st = parseInt(step.value - 1);
-  const response = await axios.get(`http://localhost:5000/api/v1/news?p=${st}`);
+  const response = await axios.get(`https://afl-server.onrender.com/api/v1/news?p=${st}`);
 
   news.value = response.data.msg;
 
@@ -114,7 +115,7 @@ const prev = async () => {
 
 const next = async () => {
   const st = parseInt(step.value + 1);
-  const response = await axios.get(`http://localhost:5000/api/v1/news?p=${st}`);
+  const response = await axios.get(`https://afl-server.onrender.com/api/v1/news?p=${st}`);
 
   news.value = response.data.msg;
 
@@ -123,13 +124,15 @@ const next = async () => {
 
 const filterAction = async (e) => {
   if (e.trim().length > 0) {
-    const _news = await axios.get("http://localhost:5000/api/v1/news/dashboard");
+    const _news = await axios.get(
+      "https://afl-server.onrender.com/api/v1/news/dashboard"
+    );
 
     news.value = _news.data.msg.filter((_res) =>
       _res.title.toLowerCase().includes(e.toLowerCase())
     );
   } else {
-    const _news = await axios.get("http://localhost:5000/api/v1/news");
+    const _news = await axios.get("https://afl-server.onrender.com/api/v1/news");
 
     getAllNews();
   }

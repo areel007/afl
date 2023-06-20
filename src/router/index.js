@@ -153,6 +153,9 @@ const routes = [
   {
     path: "/availability",
     name: "Availability",
+    meta: {
+      title: "Availability - AFL Network",
+    },
     beforeEnter: guardToHome,
     component: Availability,
   },
@@ -446,9 +449,10 @@ const routes = [
           },
         ],
       },
+
       {
-        path: "/admin/dashboard/jobs",
-        component: () => import("../views/admin/jobs.vue"),
+        path: "/admin/dashboard/register",
+        component: () => import("../views/admin/availability/register.vue"),
       },
     ],
   },

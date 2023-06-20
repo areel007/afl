@@ -114,233 +114,34 @@
       </div>
     </section>
 
-    <!-- <section class="py-[50px] md:py-[100px] bg-[#DFF6DF]">
-      <div class="w-[85%] xl:w-[1200px] mx-auto">
-        <div class="w-full lg:w-[800px] mx-auto">
-          <div>
-            <h3
-              class="text-[20px] md:text-[30px] leading-[1.2] font-[600] mb-[10px] md:mb-[20px]"
-              id="solution"
-            >
-              The Solution
-            </h3>
-            <div class="w-full lg:w-[800px] h-[250px] md:h-[400px] bg-black mb-[40px]">
-              <img
-                src="../../assets/images/about-intro-2.jpg"
-                alt="afl network"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <p class="text-[16px] md:text-[20px] mb-[10px]">
-              AFL Networks firmly believe that adopting modern, open, and pure fibre
-              infrastructure is the most effective means of supporting the digital
-              economy, fostering national growth, and facilitating future prosperity.
-            </p>
-            <div>
-              <p class="text-[14px] md:text-[16px] mb-[20px]">
-                To truly revolutionise our nation's internet infrastructure, we believe
-                that a full-fibre infrastructure provider must possess two critical
-                components:
-              </p>
-
-              <div class="mb-[20px]">
-                <h4 class="text-[14px] md:text-[16px] font-[600] mb-[10px]">
-                  Digital Exchanges or Points of Presence
-                </h4>
-                <p class="text-[14px] md:text-[16px]">
-                  A Digital Exchange serves as a marketplace for exchanging Internet
-                  resources between supply and demand while acting as a small-scale cloud
-                  data centre located at the edge of the Internet. AFL Networks has
-                  earmarked 54 Points of Presence as digital exchanges across the
-                  footprint with interconnecting fibre optics rings.
-                </p>
-              </div>
-
-              <div>
-                <h4 class="text-[14px] md:text-[16px] font-[600] mb-[10px]">
-                  Open Access Networks
-                </h4>
-                <p class="text-[14px] md:text-[16px]">
-                  Wholesale-only open access networks refer to independent, full-fibre
-                  infrastructure made available to a wide range of service providers to
-                  offer broadband services to customers across towns and cities. ALF
-                  Networks operates an open access model, meaning that any service
-                  provider can access the network equally and provide their services to
-                  end-users.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <!--  -->
-    <!-- <section class="py-[50px] md:py-[100px] bg-gray-100">
-      <div class="w-[85%] xl:w-[1200px] mx-auto">
-        <div class="mb-[20px] md:mb-[40px]">
-          <h3
-            class="text-center text-[20px] md:text-[28px] font-[600] mb-[10px] md:mb-[20px]"
-          >
-            More about AFL Network
-          </h3>
-          <p class="text-center w-full md:w-[700px] mx-auto text-[14px] md:text-[16px]">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro illum earum
-            quia pariatur impedit maiores qui non veritatis, omnis voluptatibus?
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-[10px] md:gap-[20px]">
-          <div>
-            <div class="h-[250px] w-full bg-black"></div>
-            <div class="w-full p-[20px] bg-white">
-              <h4 class="text-[16px] md:text-[18px] uppercase font-[600] mb-[10px]">
-                Our rollout
-              </h4>
-              <p class="text-[14px] md:text-[16px] mb-[20px]">
-                We're constructing entire communities across our footprint in Lagos.
-                <br />
-                <br />
-                <br />
-              </p>
-              <button
-                @click="$router.push('/about-us/our-rollout')"
-                class="p-[10px_20px] bg-black text-white text-[14px] w-full"
-              >
-                Explore
-              </button>
-            </div>
-          </div>
-
-          <div>
-            <div class="h-[250px] w-full bg-black"></div>
-            <div class="w-full p-[20px] bg-white">
-              <h4 class="text-[16px] md:text-[18px] uppercase font-[600] mb-[10px]">
-                Our infrastructure
-              </h4>
-              <p class="text-[14px] md:text-[16px] mb-[20px]">
-                Our brand-new fibre network has been constructed to endure and surpass
-                expectations.
-                <br />
-                <br />
-              </p>
-              <button
-                @click="$router.push('/about-us/our-infrastructure')"
-                class="p-[10px_20px] bg-black text-white text-[14px] w-full"
-              >
-                Explore
-              </button>
-            </div>
-          </div>
-
-          <div>
-            <div class="h-[250px] w-full bg-black"></div>
-            <div class="w-full p-[20px] bg-white">
-              <h4 class="text-[16px] md:text-[18px] uppercase font-[600] mb-[10px]">
-                Our platform
-              </h4>
-              <p class="text-[14px] md:text-[16px] mb-[20px]">
-                Creating the smarted network in Nigeria
-                <br />
-                <br />
-                <br />
-                <br />
-              </p>
-              <button
-                @click="$router.push('/about-us/our-platform')"
-                class="p-[10px_20px] bg-black text-white text-[14px] w-full"
-              >
-                Explore
-              </button>
-            </div>
-          </div>
-
-          <div>
-            <div class="h-[250px] w-full bg-black"></div>
-            <div class="w-full p-[20px] bg-white">
-              <h4 class="text-[16px] md:text-[18px] uppercase font-[600] mb-[10px]">
-                Our Service
-              </h4>
-              <p class="text-[14px] md:text-[16px] mb-[20px]">
-                Providing consistently prompt and dependable services is not a
-                coincidence; it requires intentional effort and attention to detail.
-              </p>
-              <button
-                @click="$router.push('/about-us/our-service')"
-                class="p-[10px_20px] bg-black text-white text-[14px] w-full"
-              >
-                Explore
-              </button>
-            </div>
-          </div>
-
-          <div>
-            <div class="h-[250px] w-full bg-black"></div>
-            <div class="w-full p-[20px] bg-white">
-              <h4 class="text-[16px] md:text-[18px] uppercase font-[600] mb-[10px]">
-                Our vision
-              </h4>
-              <p class="text-[14px] md:text-[16px] mb-[20px]">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam
-                necessitatibus.
-                <br />
-                <br />
-                <br />
-              </p>
-              <button class="p-[10px_20px] bg-black text-white text-[14px] w-full">
-                Explore
-              </button>
-            </div>
-          </div>
-
-          <div>
-            <div class="h-[250px] w-full bg-black"></div>
-            <div class="w-full p-[20px] bg-white">
-              <h4 class="text-[16px] md:text-[18px] uppercase font-[600] mb-[10px]">
-                Our management team
-              </h4>
-              <p class="text-[14px] md:text-[16px] mb-[20px]">
-                Promoting the expansion and advancement of AFL Networks.
-                <br />
-                <br />
-                <br />
-              </p>
-              <button
-                @click="$router.push('/about-us/our-management-team')"
-                class="p-[10px_20px] bg-black text-white text-[14px] w-full"
-              >
-                Explore
-              </button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section> -->
-
     <!--  -->
     <section class="py-[50px] md:py-[100px] bg-[#f5f5f5]">
       <div class="w-[85%] xl:w-[1200px] mx-auto">
         <div
           class="grid grid-cols-1 md:grid-cols-2 gap-[20px] md:gap-[60px] items-center"
         >
-          <div class="w-full h-[250px] md:h-[400px] bg-black"></div>
+          <div class="w-full h-[250px] md:h-[400px] bg-black">
+            <img
+              :src="singleNews.imageUrl"
+              alt="AFL Networks"
+              class="w-full h-full object-cover"
+            />
+          </div>
           <div>
             <p class="font-[500] text-[14px] md:text-[16px] mb-[10px] md:mb-[20px]">
               News
             </p>
             <h3
-              class="text-[20px] md:text-[28px] leading-[1] font-[600] mb-[10px] md:mb-[20px]"
+              class="text-[16px] md:text-[24px] leading-[1] font-[600] mb-[10px] md:mb-[20px]"
             >
-              Dolor, sit amet consectetur.
+              {{ singleNews.title }}
             </h3>
             <p class="text-[14px] md:text-[16px] mb-[10px] md:mb-[20px]">
-              sit amet consectetur adipisicing elit. Repellendus reiciendis tempore eius
-              nulla eaque dolorem dolores optio?
+              {{ singleNews.subtitle }}
             </p>
             <router-link
-              to="/communication/news"
-              class="bg-black p-[10px_20px] text-white text-[14px]"
+              :to="`/communication/news/${singleNews._id}`"
+              class="bg-black p-[10px_20px] text-white text-[14px] inline-block"
             >
               Read more
             </router-link>
@@ -352,10 +153,28 @@
 </template>
 
 <script>
+import axios from "axios";
 import PartnersCarousel from "../../components/PartnersCarousel.vue";
 export default {
   name: "GetConnected",
   components: { PartnersCarousel },
+  data() {
+    return {
+      news: [],
+      singleNews: {},
+    };
+  },
+  methods: {
+    async getBlog() {
+      const response = await axios.get("https://afl-server.onrender.com/api/v1/news");
+      this.news = response.data.msg;
+      this.singleNews = this.news[0];
+    },
+  },
+
+  mounted() {
+    this.getBlog();
+  },
 };
 </script>
 

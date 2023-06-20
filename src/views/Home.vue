@@ -14,6 +14,7 @@ export default {
       step: 1,
       regionValue: "",
       searchResult: [],
+      searchAreaInput: "",
     };
   },
   methods: {
@@ -26,6 +27,17 @@ export default {
         this.$router.push({
           path: "availability",
           query: { selectedAddress: this.searchResult },
+        });
+      } else {
+        alert("Input your address correctly");
+      }
+    },
+
+    checkArea() {
+      if (this.searchAreaInput) {
+        this.$router.push({
+          path: "availability",
+          query: { selectedAddress: this.searchAreaInput },
         });
       } else {
         alert("Input your address correctly");
@@ -245,8 +257,12 @@ export default {
               type="text"
               placeholder="Your home address i.e. Ikoyi, Lagos"
               class="bg-transparent placeholder:text-[12px] md:placeholder:text-[14px] placeholder:text-white outline-none border border-white p-[10px] text-white"
+              v-model="searchAreaInput"
             />
-            <button class="bg-black text-white text-[12px] md:text-[14px] leading-[1]">
+            <button
+              class="bg-black text-white text-[12px] md:text-[14px] leading-[1]"
+              @click="checkArea"
+            >
               Check now
             </button>
           </div>
