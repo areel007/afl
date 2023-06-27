@@ -60,9 +60,6 @@
               >
             </li>
           </ul>
-          <button class="p-[10px] bg-[#383B63] text-white text-[14px]">
-            Check availability
-          </button>
         </div>
       </div>
     </div>
@@ -306,7 +303,7 @@ export default {
 
 <style scoped>
 .our-solutions-hero {
-  background-image: url(../../assets/images/FTTH.jpg);
+  background-image: url(../../assets/images/FTTH.webp);
   /* object-fit: cover; */
   background-position: center;
   background-size: cover;

@@ -66,6 +66,11 @@
               </div>
             </div>
 
+            <div
+              class="mb-[20px] md:mb-[40px] w-full lg:w-[800px]"
+              v-html="job.jobContent"
+            ></div>
+
             <h3
               class="text-[16px] md:text-[24px] font-[600] mb-[5px] md:mb-[10px] text-[#2A2760]"
             >
@@ -89,6 +94,7 @@
                   <input
                     type="text"
                     class="p-[10px] border border-gray-400 block mb-[0] md:mb-[5px]"
+                    v-model="applicationForm.firstname"
                   />
                   <span class="block text-[10px] md:text-[12px]">First Name</span>
                 </div>
@@ -97,6 +103,7 @@
                   <input
                     type="text"
                     class="p-[10px] border border-gray-400 block mb-[0] md:mb-[5px]"
+                    v-model="applicationForm.middlename"
                   />
                   <span class="block text-[10px] md:text-[12px]">Middle Name</span>
                 </div>
@@ -105,6 +112,7 @@
                   <input
                     type="text"
                     class="p-[10px] border border-gray-400 block mb-[0] md:mb-[5px]"
+                    v-model="applicationForm.lastname"
                   />
                   <span class="block text-[10px] md:text-[12px]">Last Name</span>
                 </div>
@@ -120,6 +128,7 @@
                   <input
                     type="text"
                     class="p-[10px] border border-gray-400 block mb-[0] md:mb-[5px]"
+                    v-model="applicationForm.month"
                   />
                   <span class="block text-[10px] md:text-[12px]">Month</span>
                 </div>
@@ -128,6 +137,7 @@
                   <input
                     type="text"
                     class="p-[10px] border border-gray-400 block mb-[0] md:mb-[5px]"
+                    v-model="applicationForm.day"
                   />
                   <span class="block text-[10px] md:text-[12px]">Day</span>
                 </div>
@@ -136,6 +146,7 @@
                   <input
                     type="text"
                     class="p-[10px] border border-gray-400 block mb-[0] md:mb-[5px]"
+                    v-model="applicationForm.year"
                   />
                   <span class="block text-[10px] md:text-[12px]">Year</span>
                 </div>
@@ -151,6 +162,7 @@
                   <input
                     type="text"
                     class="p-[10px] border border-gray-400 block mb-[0] md:mb-[5px]"
+                    v-model="applicationForm.street"
                   />
                   <span class="block text-[10px] md:text-[12px]">Street Address</span>
                 </div>
@@ -159,6 +171,7 @@
                   <input
                     type="text"
                     class="p-[10px] border border-gray-400 block mb-[0] md:mb-[5px]"
+                    v-model="applicationForm.city"
                   />
                   <span class="block text-[10px] md:text-[12px]">City</span>
                 </div>
@@ -167,6 +180,7 @@
                   <input
                     type="text"
                     class="p-[10px] border border-gray-400 block mb-[0] md:mb-[5px]"
+                    v-model="applicationForm.state"
                   />
                   <span class="block text-[10px] md:text-[12px]">State/Province</span>
                 </div>
@@ -182,6 +196,7 @@
                   <input
                     type="text"
                     class="p-[10px] border border-gray-400 block mb-[0] md:mb-[5px]"
+                    v-model="applicationForm.resumeUrl"
                   />
                   <span class="block text-[10px] md:text-[12px]">Resume URL</span>
                 </div>
@@ -191,6 +206,7 @@
             <button
               class="bg-black text-white p-[10px_20px] text-[14px]"
               style="width: min-content"
+              @click.prevent="submitApplication"
             >
               Submit
             </button>
@@ -208,6 +224,18 @@ export default {
   data() {
     return {
       job: {},
+      applicationForm: {
+        firstname: "",
+        middlename: "",
+        lastname: "",
+        month: "",
+        day: "",
+        year: "",
+        street: "",
+        city: "",
+        state: "",
+        resumeUrl: "",
+      },
     };
   },
   methods: {
@@ -215,6 +243,22 @@ export default {
       const id = this.$route.query.jobID;
       const job = await axios.get(`https://afl-server.onrender.com/api/v1/jobs/${id}`);
       this.job = job.data.job;
+    },
+
+    async submitApplication() {
+      await axios.post("https://afl-server.onrender.com/api/v1/application", {
+        position: this.job.jobTitle,
+        firstname: this.applicationForm.firstname,
+        middlename: this.applicationForm.middlename,
+        lastname: this.applicationForm.lastname,
+        monthOfBirth: this.applicationForm.month,
+        dayOfBirth: this.applicationForm.day,
+        yearOfBirth: this.applicationForm.year,
+        streetName: this.applicationForm.street,
+        city: this.applicationForm.city,
+        state: this.applicationForm.state,
+        resumeUrl: this.applicationForm.resumeUrl,
+      });
     },
   },
   mounted() {

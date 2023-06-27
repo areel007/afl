@@ -22,14 +22,25 @@
 
           <div class="w-full pb-[20px] md:pb-[50px] lg:w-[800px]">
             <div
-              class="grid grid-cols-1 md:grid-cols-3 gap-[5px] md:gap-[20px] mt-[20px] md:mt-[40px]"
+              class="grid grid-cols-1 md:grid-cols-3 gap-[5px] md:gap-[20px] mt-[20px] md:mt-[40px] mb-[15px]"
             >
               <div
-                class="p-[10px] bg-black text-white rounded-full text-center inline-flex items-center justify-center leading-[1] text-[14px]"
+                class="p-[10px] bg-[#f5f5f5] text-white rounded-full text-center inline-flex items-center justify-center leading-[1] text-[14px] cursor-pointer gap-[10px]"
+                @click="$router.go(-1)"
+              >
+                <IconArrowLeft />
+                <span class="text-black text-[14px]">Go Back</span>
+              </div>
+              <div
+                class="p-[10px] bg-black text-white rounded-full text-center inline-flex items-center justify-center leading-[1] text-[14px] cursor-pointer"
               >
                 All Jobs
               </div>
             </div>
+
+            <p class="text-[14px] md:text-[16px]">
+              Find below all job openings at the moment
+            </p>
           </div>
         </div>
       </section>
@@ -79,8 +90,10 @@
 
 <script>
 import axios from "axios";
+import IconArrowLeft from "../../components/icons/IconArrowLeft.vue";
 export default {
   name: "AllJobs",
+  components: { IconArrowLeft },
   data() {
     return {
       jobs: [],

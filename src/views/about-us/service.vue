@@ -43,9 +43,6 @@
               >
             </li> -->
           </ul>
-          <button class="p-[10px] bg-[#383B63] text-white text-[14px]">
-            Check availability
-          </button>
         </div>
       </div>
     </div>
@@ -61,7 +58,8 @@
             <h1
               class="text-white font-[700] uppercase text-[24px] md:text-[40px] lg:text-[80px] leading-[1]"
             >
-              FIBRE-OPTIC NETWORK DESIGNED SPECIFICALLY <br class="hidden md:block" />
+              FIBRE-OPTIC NETWORK DESIGNED SPECIFICALLY
+              <br class="hidden md:block" />
               FOR THE DIGITAL ERA
             </h1>
           </div>
@@ -234,8 +232,12 @@
               type="text"
               placeholder="Your home address i.e. Ikoyi, Lagos"
               class="bg-transparent placeholder:text-[12px] md:placeholder:text-[14px] placeholder:text-black outline-none border border-gray-300 p-[10px]"
+              v-model="searchAreaInput"
             />
-            <button class="bg-black text-white text-[12px] md:text-[14px] leading-[1]">
+            <button
+              class="bg-black text-white text-[12px] md:text-[14px] leading-[1]"
+              @click="checkArea"
+            >
               Check now
             </button>
           </div>
@@ -250,12 +252,31 @@ import Map from "../../components/Map.vue";
 export default {
   name: "Service",
   components: { Map },
+
+  data() {
+    return {
+      searchAreaInput: "",
+    };
+  },
+
+  methods: {
+    checkArea() {
+      if (this.searchAreaInput) {
+        this.$router.push({
+          path: "/availability",
+          query: { selectedAddress: this.searchAreaInput },
+        });
+      } else {
+        alert("Input your address correctly");
+      }
+    },
+  },
 };
 </script>
 
 <style scoped>
 .about-us-hero {
-  background-image: url(../../assets/images/bg3.jpg);
+  background-image: url(../../assets/images/bg3.webp);
   object-fit: cover;
   background-position: center;
   background-size: cover;

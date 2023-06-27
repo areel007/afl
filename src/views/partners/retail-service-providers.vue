@@ -296,9 +296,11 @@
               type="text"
               placeholder="Your home address i.e. Ikoyi, Lagos"
               class="text-white bg-transparent placeholder:text-[12px] md:placeholder:text-[14px] placeholder:text-white outline-none border border-gray-300 p-[10px]"
+              v-model="searchAreaInput"
             />
             <button
               class="bg-black text-white text-[12px] md:text-[14px] leading-[1] p-[10px]"
+              @click="checkArea"
             >
               Check now
             </button>
@@ -338,14 +340,28 @@ export default {
   data() {
     return {
       isRequirementFormShown: false,
+      searchAreaInput: "",
     };
+  },
+
+  methods: {
+    checkArea() {
+      if (this.searchAreaInput) {
+        this.$router.push({
+          path: "/availability",
+          query: { selectedAddress: this.searchAreaInput },
+        });
+      } else {
+        alert("Input your address correctly");
+      }
+    },
   },
 };
 </script>
 
 <style scoped>
 .get-connected-hero {
-  background-image: url(../../assets/images/bg3.jpg);
+  background-image: url(../../assets/images/bg3.webp);
   object-fit: cover;
   background-position: center;
   background-size: cover;

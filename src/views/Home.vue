@@ -296,15 +296,14 @@ export default {
       </div>
     </section>
 
-    <section class="w-full h-[250px] md:h-[550px] bg-gray-100">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126841.26978267955!2d3.2015588435055764!3d6.548218935251483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d9cb!2sLagos!5e0!3m2!1sen!2sng!4v1684840914625!5m2!1sen!2sng"
-        class="w-full h-full"
-        style="border: 0"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
+    <section class="w-full pb-[50px] md:pb-[100px]">
+      <div class="w-[85%] xl:w-[1200px] mx-auto">
+        <img
+          src="../assets/images/home-coverage-map.webp"
+          alt="afl networks"
+          class="w-full"
+        />
+      </div>
     </section>
   </div>
 </template>

@@ -4,7 +4,7 @@
   >
     <div class="h-full relative slide" v-if="count === 1">
       <img
-        src="https://res.cloudinary.com/dsnzvj1ot/image/upload/v1686248104/afl/slider-1_c00b0f.webp"
+        src="https://res.cloudinary.com/dsnzvj1ot/image/upload/v1686247979/afl/slider-5_inweiy.webp"
         alt="afl networks"
         class="w-full h-full object-cover absolute"
       />
@@ -15,10 +15,11 @@
               class="text-white uppercase font-[700] lg:font-[700] leading-[1.2] md:leading-[1] text-left md:text-left"
               :class="{ show: isTextVisible }"
             >
-              DEEPENING BROADBAND <br class="hidden lg:block" />
-              PENETRATION THROUGH <br class="hide_br" />
-              OPEN ACCESS FIBRE OPTIC <br class="hide__br" />
-              NETWORK INFRASTRUCTURE
+              DEEPENING METRO <br />
+              BROADBAND PENETRATION <br />
+              THROUGH OPEN ACCESS <br />
+              AERIAL FIBRE NETWORK <br />
+              INFRASTRUCTURE
             </h1>
           </div>
         </div>
@@ -38,10 +39,10 @@
               class="text-white uppercase font-[700] lg:font-[700] leading-[1.2] md:leading-[1] text-left md:text-left"
               :class="{ show: isTextVisible }"
             >
-              DEEPENING BROADBAND <br class="hidden lg:block" />
-              PENETRATION THROUGH <br class="hide_br" />
-              OPEN ACCESS FIBRE OPTIC <br class="hide__br" />
-              NETWORK INFRASTRUCTURE
+              CAPACITY SERVICES <br />
+              DESIGNED TO MEET <br />
+              THE DEMANDS OF TODAY'S <br />
+              EVOLVING NETWORKS
             </h1>
           </div>
         </div>
@@ -61,10 +62,9 @@
               class="text-white uppercase font-[700] lg:font-[700] leading-[1.2] md:leading-[1] text-left md:text-left"
               :class="{ show: isTextVisible }"
             >
-              DEEPENING BROADBAND <br class="hidden lg:block" />
-              PENETRATION THROUGH <br class="hide_br" />
-              OPEN ACCESS FIBRE OPTIC <br class="hide__br" />
-              NETWORK INFRASTRUCTURE
+              PROVIDING COMPLETE <br />
+              FLEXIBILITY AND NEAR- <br />
+              LIMITLESS CAPACITY
             </h1>
           </div>
         </div>
@@ -84,10 +84,10 @@
               class="text-white uppercase font-[700] lg:font-[700] leading-[1.2] md:leading-[1] text-left md:text-left"
               :class="{ show: isTextVisible }"
             >
-              DEEPENING BROADBAND <br class="hidden lg:block" />
-              PENETRATION THROUGH <br class="hide_br" />
-              OPEN ACCESS FIBRE OPTIC <br class="hide__br" />
-              NETWORK INFRASTRUCTURE
+              DESIGNED FOR SEAMLESS <br class="hidden lg:block" />
+              INTERCONNECTION BETWEEN <br class="hodden md:block" />
+              OPERATORS AND SYSTEM <br class="hidden md:block" />
+              INTEGRATORS
             </h1>
           </div>
         </div>
@@ -96,7 +96,7 @@
 
     <div class="h-full relative slide" v-if="count === 5">
       <img
-        src="https://res.cloudinary.com/dsnzvj1ot/image/upload/v1686247979/afl/slider-5_inweiy.webp"
+        src="https://res.cloudinary.com/dsnzvj1ot/image/upload/v1686248104/afl/slider-1_c00b0f.webp"
         alt="afl networks"
         class="w-full h-full object-cover absolute"
       />
@@ -107,10 +107,9 @@
               class="text-white uppercase font-[700] lg:font-[700] leading-[1.2] md:leading-[1] text-left md:text-left"
               :class="{ show: isTextVisible }"
             >
-              DEEPENING BROADBAND <br class="hidden lg:block" />
-              PENETRATION THROUGH <br class="hide_br" />
-              OPEN ACCESS FIBRE OPTIC <br class="hide__br" />
-              NETWORK INFRASTRUCTURE
+              DELIVERING FIRST-CLASS <br />
+              CONNECTIVITY TO SUIT <br />
+              EVERY BUSINESS
             </h1>
           </div>
         </div>
@@ -190,7 +189,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 817px) {
+@media screen and (max-width: 820px) {
   .hero__text h1 {
     font-size: 40px;
   }

@@ -40,9 +40,9 @@
               >
             </li> -->
           </ul>
-          <button class="p-[10px] bg-[#383B63] text-white text-[14px]">
+          <!-- <button class="p-[10px] bg-[#383B63] text-white text-[14px]">
             Check availability
-          </button>
+          </button> -->
         </div>
       </div>
     </div>
@@ -115,7 +115,7 @@
     </section>
 
     <!--  -->
-    <section class="py-[50px] md:py-[100px] bg-[#f5f5f5]">
+    <section class="py-[50px] md:py-[100px] bg-[#f5f5f5]" v-if="!loading">
       <div class="w-[85%] xl:w-[1200px] mx-auto">
         <div
           class="grid grid-cols-1 md:grid-cols-2 gap-[20px] md:gap-[60px] items-center"
@@ -155,13 +155,15 @@
 <script>
 import axios from "axios";
 import PartnersCarousel from "../../components/PartnersCarousel.vue";
+import Loading from "../../components/icons/Loading.vue";
 export default {
   name: "GetConnected",
-  components: { PartnersCarousel },
+  components: { PartnersCarousel, Loading },
   data() {
     return {
       news: [],
       singleNews: {},
+      loading: "true",
     };
   },
   methods: {
@@ -169,6 +171,7 @@ export default {
       const response = await axios.get("https://afl-server.onrender.com/api/v1/news");
       this.news = response.data.msg;
       this.singleNews = this.news[0];
+      this.loading = false;
     },
   },
 
@@ -180,7 +183,7 @@ export default {
 
 <style scoped>
 .about-us-hero {
-  background-image: url(../../assets/images/bg3.jpg);
+  background-image: url(../../assets/images/bg3.webp);
   object-fit: cover;
   background-position: center;
   background-size: cover;

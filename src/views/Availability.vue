@@ -17,11 +17,11 @@
           To be the first to know when we are coming to your street and when you can
           access full fibre broadband, please sign up with us for updates.
         </p>
-        <button
+        <!-- <button
           class="bg-black p-[10px_20px] text-white rounded-md font-[300] text-[14px]"
         >
           Check another address
-        </button>
+        </button> -->
       </div>
     </div>
 

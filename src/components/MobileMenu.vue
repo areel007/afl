@@ -29,7 +29,7 @@
 
         <li class="p-[10px] hover:bg-white hover:text-[#2A2760] hover:font-[600]">
           <div class="flex items-center justify-between gap-[5px]">
-            <a href="/about-us">Our Solutions</a>
+            <a href="/our-solutions">Our Solutions</a>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

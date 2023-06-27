@@ -60,9 +60,6 @@
               >
             </li>
           </ul>
-          <button class="p-[10px] bg-[#383B63] text-white text-[14px]">
-            Check availability
-          </button>
         </div>
       </div>
     </div>
@@ -214,9 +211,11 @@
   </div>
 </template>
 
+<script></script>
+
 <style scoped>
 .our-solutions-hero {
-  background-image: url(../../assets/images/dark-fibre.jpg);
+  background-image: url(../../assets/images/dark-fibre.webp);
   /* object-fit: cover; */
   background-position: center;
   /* background-size: cover; */

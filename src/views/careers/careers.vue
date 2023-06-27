@@ -35,72 +35,28 @@
 
         <div
           class="grid grid-cols-1 md:grid-cols-3 gap-[5px] md:gap-[20px] mt-[20px] md:mt-[40px]"
+          v-if="jobs.length > 0"
         >
           <router-link
             to="/careers/all-jobs"
-            class="p-[10px] bg-[#67be68] text-white rounded-full text-center inline-flex items-center justify-center leading-[1] text-[14px]"
+            class="p-[10px] bg-[#67be68] text-white rounded-full text-center inline-flex items-center justify-center leading-[1] text-[14px] h-[50px]"
             >All Jobs</router-link
           >
-
-          <router-link
-            to="/careers/network-build"
-            class="p-[10px] bg-[#67be68] text-white rounded-full text-center inline-flex items-center justify-center leading-[1] text-[14px]"
-            >Network Build</router-link
+          <button
+            class="p-[10px] bg-[#67be68] text-white rounded-full text-center inline-flex items-center justify-center leading-[1] text-[14px] h-[50px]"
+            @click="
+              $router.push({
+                path: '/careers/job-application',
+                query: {
+                  jobID: job._id,
+                },
+              })
+            "
+            v-for="job in jobs"
+            :key="job._id"
           >
-
-          <router-link
-            to="/careers"
-            class="p-[10px] bg-[#67be68] text-white rounded-full text-center inline-flex items-center justify-center leading-[1] text-[14px]"
-            >Marketing & Communications</router-link
-          >
-
-          <router-link
-            to="/careers"
-            class="p-[10px] bg-[#67be68] text-white rounded-full text-center inline-flex items-center justify-center leading-[1] text-[14px]"
-            >GIS Planning & Surveying</router-link
-          >
-
-          <router-link
-            to="/careers"
-            class="p-[10px] bg-[#67be68] text-white rounded-full text-center inline-flex items-center justify-center leading-[1] text-[14px]"
-            >Technology & Engineering</router-link
-          >
-
-          <router-link
-            to="/careers"
-            class="p-[10px] bg-[#67be68] text-white rounded-full text-center inline-flex items-center justify-center leading-[1] text-[14px]"
-            >Field Operations</router-link
-          >
-
-          <router-link
-            to="/careers"
-            class="p-[10px] bg-[#67be68] text-white rounded-full text-center inline-flex items-center justify-center leading-[1] text-[14px]"
-            >Corporate Functions</router-link
-          >
-
-          <router-link
-            to="/careers"
-            class="p-[10px] bg-[#67be68] text-white rounded-full text-center inline-flex items-center justify-center leading-[1] text-[14px]"
-            >Commercial & Sales</router-link
-          >
-
-          <router-link
-            to="/careers"
-            class="p-[10px] bg-[#67be68] text-white rounded-full text-center inline-flex items-center justify-center leading-[1] text-[14px]"
-            >Customer Support</router-link
-          >
-
-          <router-link
-            to="/careers"
-            class="p-[10px] bg-[#67be68] text-white rounded-full text-center inline-flex items-center justify-center leading-[1] text-[14px]"
-            >PMO & Project Management</router-link
-          >
-
-          <router-link
-            to="/careers"
-            class="p-[10px] bg-[#67be68] text-white rounded-full text-center inline-flex items-center justify-center leading-[1] text-[14px]"
-            >New Starters</router-link
-          >
+            {{ job.jobTitle }}
+          </button>
         </div>
       </div>
     </section>
@@ -221,14 +177,30 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "Careers",
+  data() {
+    return {
+      jobs: [],
+    };
+  },
+  methods: {
+    async getJobs() {
+      const jobs = await axios.get("https://afl-server.onrender.com/api/v1/jobs");
+
+      this.jobs = jobs.data.jobs;
+    },
+  },
+  mounted() {
+    this.getJobs();
+  },
 };
 </script>
 
 <style scoped>
 .about-us-hero {
-  background-image: url(../../assets/images/bg3.jpg);
+  background-image: url(../../assets/images/bg3.webp);
   object-fit: cover;
   background-position: center;
   background-size: cover;
