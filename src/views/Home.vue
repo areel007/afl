@@ -5,6 +5,7 @@ import PartnersCarousel from "../components/PartnersCarousel.vue";
 import Rollout from "./about-us/rollout.vue";
 import Carousel from "../components/Carousel.vue";
 // import ParticleBackground from "../components/ParticleBackground.vue";
+import axios from "axios";
 
 export default {
   name: "Home",
@@ -15,6 +16,7 @@ export default {
       regionValue: "",
       searchResult: [],
       searchAreaInput: "",
+      searchAreas: [],
     };
   },
   methods: {
@@ -22,16 +24,16 @@ export default {
       this.searchResult = e.target.value;
       console.log(this.searchResult);
     },
-    checkNow() {
-      if (this.searchResult.length > 0) {
-        this.$router.push({
-          path: "availability",
-          query: { selectedAddress: this.searchResult },
-        });
-      } else {
-        alert("Input your address correctly");
-      }
-    },
+    // checkNow() {
+    //   if (this.searchResult.length > 0) {
+    //     this.$router.push({
+    //       path: "availability",
+    //       query: { selectedAddress: this.searchResult },
+    //     });
+    //   } else {
+    //     alert("Input your address correctly");
+    //   }
+    // },
 
     checkArea() {
       if (this.searchAreaInput) {
@@ -42,6 +44,23 @@ export default {
       } else {
         alert("Input your address correctly");
       }
+    },
+
+    async getAreas() {
+      const areas = await axios.get(
+        "https://afl-server.onrender.com/api/v1/area-register"
+      );
+
+      const filteredAreas = areas.data.msg.filter((area) => {
+        return area.area.toLowerCase().includes(this.searchAreaInput.toLowerCase());
+      });
+
+      this.searchAreas = filteredAreas;
+    },
+
+    getAreaIntoInput(e) {
+      this.searchAreaInput = e.target.innerHTML;
+      this.searchAreas = [];
     },
   },
 };
@@ -252,19 +271,37 @@ export default {
             Check my address on the Network
           </h3>
 
-          <div class="grid grid-cols-[65%_1fr] md:grid-cols-[80%_1fr]">
-            <input
-              type="text"
-              placeholder="Your home address i.e. Ikoyi, Lagos"
-              class="bg-transparent placeholder:text-[12px] md:placeholder:text-[14px] placeholder:text-white outline-none border border-white p-[10px] text-white"
-              v-model="searchAreaInput"
-            />
-            <button
-              class="bg-black text-white text-[12px] md:text-[14px] leading-[1]"
-              @click="checkArea"
+          <div class="relative">
+            <div class="grid grid-cols-[65%_1fr] md:grid-cols-[80%_1fr]">
+              <input
+                type="text"
+                placeholder="Your home address i.e. Ikoyi, Lagos"
+                class="bg-transparent placeholder:text-[12px] md:placeholder:text-[14px] placeholder:text-white outline-none border border-white p-[10px] text-white"
+                v-model="searchAreaInput"
+                @input="getAreas"
+              />
+              <button
+                class="bg-black text-white text-[12px] md:text-[14px] leading-[1]"
+                @click="checkArea"
+              >
+                Check now
+              </button>
+            </div>
+            <div
+              class="absolute top-[110%] w-full grid grid-cols-[65%_1fr] md:grid-cols-[80%_1fr]"
+              v-if="searchAreas.length > 0 && searchAreaInput"
             >
-              Check now
-            </button>
+              <ul class="w-full bg-white p-[20px] shadow-md flex flex-col gap-[10px]">
+                <li
+                  v-for="area in searchAreas"
+                  :key="area._id"
+                  @click="getAreaIntoInput"
+                  class="cursor-pointer hover:font-[500]"
+                >
+                  {{ area.area }}
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

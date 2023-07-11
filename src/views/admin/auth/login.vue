@@ -1,7 +1,7 @@
 <template>
-  <div style="min-height: 70vh;">
+  <div style="min-height: 70vh">
     <div class="py-[50px] md:py-[100px] h-full">
-      <div class="flex justify-center items-center h-full ">
+      <div class="flex justify-center items-center h-full">
         <form class="p-[0px] md:p-[40px] w-[85%] md:w-[350px]">
           <h3 class="mb-[20px] text-[18px] md:text-[22px]">Sign in</h3>
           <div class="flex flex-col gap-[10px]">
@@ -80,7 +80,7 @@ export default {
 
       if (response.data.msg === "Logged in") {
         this.error = "";
-        localStorage.setItem('LoggedUser', true)
+        sessionStorage.setItem("LoggedUser", true);
         this.$router.push("/admin/dashboard");
       } else {
         this.error = "User not found";

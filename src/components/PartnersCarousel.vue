@@ -14,8 +14,8 @@
     ref="mySwiper"
   >
     <swiper-slide v-for="(network, index) in networks" :key="index">
-      <div class="w-[70px] h-[70px]">
-        <img :src="network" alt="afl partners" class="rounded-full" />
+      <div class="w-[120px] h-[120px]">
+        <img :src="network" alt="afl partners" class="w-full" />
       </div>
     </swiper-slide>
   </swiper>
@@ -26,10 +26,10 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 
-import MTN from "../assets/images/mtn.png";
-import Airtel from "../assets/images/airtel-logo.png";
-import Glo from "../assets/images/glo-logo.png";
-import Mobile9 from "../assets/images/9mobile.png";
+import Exchange from "../assets/images/exchange_logo.webp";
+import Ledco from "../assets/images/ledco_logo.webp";
+import Alph4 from "../assets/images/alph4mep_logo.webp";
+import Biswal from "../assets/images/biswal_logo.webp";
 
 export default {
   components: {
@@ -38,7 +38,7 @@ export default {
   },
   data() {
     return {
-      networks: [MTN, Airtel, Glo, Mobile9],
+      networks: [Exchange, Ledco, Alph4, Biswal],
     };
   },
   mounted() {
@@ -75,7 +75,7 @@ export default {
 
 <style>
 .swiper {
-  width: 500px;
+  width: 700px;
   height: 100%;
 }
 
@@ -94,7 +94,7 @@ export default {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 @media screen and (max-width: 500px) {

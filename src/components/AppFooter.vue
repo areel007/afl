@@ -51,11 +51,14 @@
         </div>
 
         <div>
-          <p class="text-[14px] text-white">
-            <b class="text-[#67BE68]">E</b>: info@afl.ng <br /><b class="text-[#67BE68]"
-              >T</b
-            >: +234 908 799 1348
-          </p>
+          <div class="text-[14px] text-white flex flex-col gap-[5px]">
+            <p class="flex gap-[4px] items-center">
+              <IconEnvelope /><span>info@afl.ng</span>
+            </p>
+            <p class="flex gap-[4px] items-center">
+              <IconPhone /><span>+234 908 799 1348</span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -66,8 +69,12 @@
 </template>
 
 <script>
+import IconEnvelope from "./icons/IconEnvelope.vue";
+import IconPhone from "./icons/IconPhone.vue";
+
 export default {
   name: "Footer",
   props: ["navMenu"],
+  components: { IconEnvelope, IconPhone },
 };
 </script>

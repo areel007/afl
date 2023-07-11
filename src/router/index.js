@@ -41,7 +41,7 @@ const guardToAccessLogin = (to, from, next) => {
 function guardDashboard(to, from, next) {
   let isAuthenticated = false;
 
-  if (localStorage.getItem("LoggedUser")) {
+  if (sessionStorage.getItem("LoggedUser")) {
     isAuthenticated = true;
   } else {
     isAuthenticated = false;
@@ -406,7 +406,6 @@ const routes = [
     },
   },
 
-
   {
     path: "/search-result",
     name: "SearchResult",
@@ -451,8 +450,14 @@ const routes = [
       },
 
       {
-        path: "/admin/dashboard/register",
-        component: () => import("../views/admin/availability/register.vue"),
+        path: "/admin/dashboard/areas",
+        component: () => import("../views/admin/availability/areas.vue"),
+        children: [
+          {
+            path: "/admin/dashboard/add-area",
+            component: () => import("../views/admin/availability/add-area.vue"),
+          },
+        ],
       },
       {
         path: "/admin/dashboard/jobs",
@@ -460,17 +465,17 @@ const routes = [
         children: [
           {
             path: "/admin/dashboard/jobs",
-            component: () => import("../views/admin/jobs/all-jobs.vue")
+            component: () => import("../views/admin/jobs/all-jobs.vue"),
           },
           {
             path: "/admin/dashboard/add-job",
-            component: () => import("../views/admin/jobs/add-jobs.vue")
+            component: () => import("../views/admin/jobs/add-jobs.vue"),
           },
           {
             path: "/admin/dashboard/applications",
-            component: () => import("../views/admin/jobs/applications.vue")
-          }
-        ]
+            component: () => import("../views/admin/jobs/applications.vue"),
+          },
+        ],
       },
     ],
   },
