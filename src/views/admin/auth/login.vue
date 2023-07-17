@@ -35,7 +35,7 @@
               @click.prevent="handleError"
               v-else
             >
-              Log in
+              <span>Log in</span>
             </button>
           </div>
         </form>
@@ -55,6 +55,7 @@ export default {
       username: "",
       password: "",
       isAuthenticated: false,
+      isLoading: false,
     };
   },
   methods: {
@@ -67,23 +68,27 @@ export default {
     },
 
     async handleLogin() {
-      const username = this.username;
-      const password = this.password;
+      try {
+        const username = this.username;
+        const password = this.password;
 
-      const response = await axios.post(
-        "https://afl-server.onrender.com/api/v1/auth/login",
-        {
-          username,
-          password,
+        const response = await axios.post(
+          "https://afl-server.onrender.com/api/v1/auth/login",
+          {
+            username,
+            password,
+          }
+        );
+
+        if (response.data.msg === "Logged in") {
+          this.error = "";
+          sessionStorage.setItem("LoggedUser", true);
+          this.$router.push("/admin/dashboard");
+        } else {
+          this.error = "User not found";
         }
-      );
-
-      if (response.data.msg === "Logged in") {
-        this.error = "";
-        sessionStorage.setItem("LoggedUser", true);
-        this.$router.push("/admin/dashboard");
-      } else {
-        this.error = "User not found";
+      } catch (error) {
+        console.log(error);
       }
     },
   },

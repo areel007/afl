@@ -406,14 +406,7 @@ const routes = [
     },
   },
 
-  {
-    path: "/search-result",
-    name: "SearchResult",
-    component: () => import("../views/search-result.vue"),
-    meta: {
-      title: "Search Result - AFL Network",
-    },
-  },
+ 
 
   {
     path: "/admin/authentication",

@@ -37,7 +37,7 @@ export default {
           latitude: this.latitude,
           isPlanned: true,
         };
-        await axios.post("http://localhost:5000/api/v1/area-register", payload);
+        await axios.post("https://afl-server.onrender.com/api/v1/area-register", payload);
       } catch (error) {
         console.log(error);
       }

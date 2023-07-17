@@ -41,7 +41,7 @@ import MobileMenu from "./components/MobileMenu.vue";
 import AppFooter from "./components/AppFooter.vue";
 import Search from "./components/Search.vue";
 import axios from "axios";
-import SearchResult from "./views/search-result.vue";
+import SearchResult from "./components/search-result.vue";
 
 export default {
   name: "App",

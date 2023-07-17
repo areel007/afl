@@ -71,7 +71,7 @@ export default {
     },
 
     async toggleValue(id) {
-      await axios.patch(`http://localhost:5000/api/v1/area-register/${id}`);
+      await axios.patch(`https://afl-server.onrender.com/api/v1/area-register/${id}`);
       !this.plannedValue;
       this.getAreas();
     },
