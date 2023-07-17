@@ -169,13 +169,16 @@ export default {
   },
   methods: {
     async submit() {
-      const response = await axios.post("http://localhost:5000/api/v1/area-register", {
-        firstname: this.firstname,
-        longitude: this.longitude,
-        email: this.email,
-        latitude: this.latitude,
-        area: this.$route.query.selectedAddress,
-      });
+      const response = await axios.post(
+        "https://afl-server.onrender.com/api/v1/area-register",
+        {
+          firstname: this.firstname,
+          longitude: this.longitude,
+          email: this.email,
+          latitude: this.latitude,
+          area: this.$route.query.selectedAddress,
+        }
+      );
       this.msg = response.data.msg;
       this.longitude = "";
       this.firstname = "";
@@ -187,7 +190,7 @@ export default {
     async getArea() {
       const address = this.$route.query.selectedAddress;
       const area = await axios.get(
-        `http://localhost:5000/api/v1/area-register/${address}`
+        `https://afl-server.onrender.com/api/v1/area-register/${address}`
       );
 
       this.area = area.data.area;
