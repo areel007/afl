@@ -1,6 +1,6 @@
 <template>
   <div class="relative top-[42px] md:top-[92.063px]">
-    <div class="" v-if="area.isPlanned">
+    <div class="" v-if="area?.isPlanned">
       <div class="w-full py-[50px] md:py-[100px] bg-[#6CC06D] h-[80vh]">
         <div class="w-[95%] xl:w-[1200px] mx-auto">
           <p class="text-black text-[14px] md:text-[16px] mb-[20px]">
