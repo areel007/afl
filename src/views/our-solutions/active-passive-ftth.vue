@@ -1,7 +1,7 @@
 <template>
   <div class="relative top-[48px] md:top-[92px]">
     <!--  -->
-    <div class="w-full bg-[#f5f5f5] py-[20px] hidden md:block">
+    <div class="w-full bg-[#f5f5f5] py-[20px] hidden lg:block">
       <div class="w-[85%] xl:w-[1200px] mx-auto">
         <div class="flex justify-between items-center">
           <ul class="flex items-center gap-[20px] text-[14px]">
@@ -127,7 +127,7 @@
 
             <p class="text-[14px] md:text-[17px] mb-[20px] md:mb-[40px]">
               AFL Networks delivers a bitstream capacity supported by the GPON (Gigabit
-              Passive Optical Network) FTTH Network, extending from the Central Office or
+              Passive Optical Network) FTTH Networks, extending from the Central Office or
               head end to end user's home. In the active model, AFL Networks provides a
               comprehensive solution, encompassing both the passive and active
               infrastructure. AFL Networks owns and operates the passive network
@@ -156,7 +156,7 @@
               network construction and management.
               <br /><br />
               Whether the end user's home is a Single Family Unit (SFU) or a Multiple
-              Dwelling Unit (MDU), AFL Network ensures connectivity to the end user's
+              Dwelling Unit (MDU), AFL Networks ensures connectivity to the end user's
               premises in both solutions. This includes providing the last mile
               connection, such as the drop cable and Optical Network Terminal (ONT) if
               required. By offering end-to-end service, our customers can enjoy a seamless
@@ -205,7 +205,7 @@
               The primary and secondary cables use a point-to-multipoint topology with a
               1:64 splitting ratio in both models. Each end user benefits from a logical
               point-to-point connection, ensuring they only send and receive the intended
-              data. This applies whether AFL NEtworks' customers adopt the Active or
+              data. This applies whether AFL Networks' customers adopt the Active or
               Passive models by providing their OLTs and ONTs.<br /><br />
               AFL Networks offers the flexibility and expertise to support operators in
               selecting the most suitable FTTH model based on their specific business

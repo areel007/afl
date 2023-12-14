@@ -1,7 +1,7 @@
 <template>
   <div class="relative top-[48px] md:top-[92px]">
     <!--  -->
-    <div class="w-full bg-[#f5f5f5] py-[20px] hidden md:block">
+    <div class="w-full bg-[#f5f5f5] py-[20px] hidden lg:block">
       <div class="w-[85%] xl:w-[1200px] mx-auto">
         <div class="flex justify-between items-center">
           <ul class="flex items-center gap-[20px] text-[14px]">
@@ -154,7 +154,10 @@
               connectivity needs.
             </p>
 
-            <router-link to="/our-solutions/capacity" class="flex items-center gap-[5px]">
+            <router-link
+              to="/our-solutions/fibre-to-the-home"
+              class="flex items-center gap-[5px]"
+            >
               <span>Read more</span>
               <IconArrowRight />
             </router-link>
@@ -162,7 +165,7 @@
 
           <div
             class="min-h-[auto] md:min-h-[250px]"
-            @click="$router.push('/our-solutions/capacity')"
+            @click="$router.push('/our-solutions/dark-fibre')"
           >
             <IconDarkFibre class="mb-[10px]" />
             <p class="text-[15px] md:text-[20px] font-[500] mb-[5px]">Dark Fibre</p>
@@ -191,7 +194,10 @@
               system integrators.
             </p>
 
-            <router-link to="/our-solutions/capacity" class="flex items-center gap-[5px]">
+            <router-link
+              to="/our-solutions/co-location"
+              class="flex items-center gap-[5px]"
+            >
               <span>Read more</span>
               <IconArrowRight />
             </router-link>

@@ -1,7 +1,7 @@
 <template>
   <div class="relative top-[48px] md:top-[92px]">
     <!--  -->
-    <div class="w-full bg-[#f5f5f5] py-[20px] hidden md:block">
+    <div class="w-full bg-[#f5f5f5] py-[20px] hidden lg:block">
       <div class="w-[85%] xl:w-[1200px] mx-auto">
         <div class="flex justify-between items-center">
           <ul class="flex items-center gap-[20px] text-[14px]">
@@ -114,7 +114,7 @@
               What is a Dark Fiber Network?
             </p>
 
-            <p class="text-[14px] md:text-[16px]">
+            <p class="text-[14px] md:text-[16px] mb-[10px] md:mb-[20px]">
               Unlike Capacity Services, which involve purchasing bandwidth or leased line
               capacity on an existing network, Dark Fiber refers to unused fibre optic
               threads that can be rented. This service grants you complete control over
@@ -142,6 +142,18 @@
               requirements. Our dark fibre deployment is supported by ongoing maintenance,
               both in terms of preventive measures and routine maintenance, and prompt
               response in case of any breakdowns.
+            </p>
+
+            <p class="text-[14px] md:text-[16px] font-[600]">ADSS fiber cables</p>
+            <p class="text-[14px] md:text-[16px] mb-[10px] md:mb-[20px]">
+              AFL Networks utilize ADSS fiber cables, offering an advantageous solution
+              for a broader spectrum of fiber quantities and distances. This enhances the
+              utilization of optical fiber in aerial cabling systems for professionals in
+              telecommunications, private network groups, and similar fields. <br /><br />
+
+              AFL Networks employ superior ADSS fiber cables that are well-suited for
+              deployment in distribution and transmission environments, providing a
+              combination of convenience and cost-effectiveness.
             </p>
           </div>
 

@@ -20,6 +20,9 @@ import SignOut from '../../../components/icons/SignOut.vue';
               >Areas</router-link
             >
             <router-link to="/admin/dashboard/jobs" class="text-white">Jobs</router-link>
+            <router-link to="/admin/dashboard/contents" class="text-white"
+              >Contents</router-link
+            >
           </nav>
           <div class="flex items-center gap-[10px] cursor-pointer" @click="signOut">
             <SignOut />

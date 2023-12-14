@@ -71,19 +71,19 @@ function guardLogin(to, from, next) {
 }
 
 const routes = [
+  // {
+  //   path: "/",
+  //   name: "Auth",
+  //   beforeEnter: guardToAccessLogin,
+  //   component: Auth,
+  //   meta: {
+  //     title: "Welcome to AFL Network",
+  //   },
+  // },
   {
     path: "/",
-    name: "Auth",
-    beforeEnter: guardToAccessLogin,
-    component: Auth,
-    meta: {
-      title: "Welcome to AFL Network",
-    },
-  },
-  {
-    path: "/home",
     name: "Home",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/Home.vue"),
     meta: {
       title: "Welcome to AFL Network",
@@ -93,7 +93,7 @@ const routes = [
   {
     path: "/about-us",
     name: "About us",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: AboutUs,
     meta: {
       title: "About Us - AFL Network",
@@ -103,7 +103,7 @@ const routes = [
   {
     path: "/about-us/our-rollout",
     name: "Rollout",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/about-us/rollout.vue"),
     meta: {
       title: "About Us - AFL Network",
@@ -113,7 +113,7 @@ const routes = [
   {
     path: "/about-us/our-infrastructure",
     name: "Infrastructure",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/about-us/infrastructure.vue"),
     meta: {
       title: "About Us - AFL Network",
@@ -123,7 +123,7 @@ const routes = [
   {
     path: "/about-us/our-platform",
     name: "Platform",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/about-us/platform.vue"),
     meta: {
       title: "About Us - AFL Network",
@@ -133,7 +133,7 @@ const routes = [
   {
     path: "/about-us/our-service",
     name: "Service",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/about-us/service.vue"),
     meta: {
       title: "About Us - AFL Network",
@@ -143,7 +143,7 @@ const routes = [
   {
     path: "/about-us/our-management-team",
     name: "ManagementTeam",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/about-us/management-team.vue"),
     meta: {
       title: "About Us - AFL Network",
@@ -156,14 +156,14 @@ const routes = [
     meta: {
       title: "Availability - AFL Network",
     },
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: Availability,
   },
 
   {
     path: "/get-connected/homes",
     name: "Homes",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: Homes,
     meta: {
       title: "Get Connected - AFL Network",
@@ -173,7 +173,7 @@ const routes = [
   {
     path: "/get-connected/businesses",
     name: "Businesses",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: Businesses,
     meta: {
       title: "Get Connected - AFL Network",
@@ -183,7 +183,7 @@ const routes = [
   {
     path: "/get-connected/landlords",
     name: "Landlords",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/get-connected/landlords.vue"),
     meta: {
       title: "Get Connected - AFL Network",
@@ -193,7 +193,7 @@ const routes = [
   {
     path: "/get-connected/developers",
     name: "Developers",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/get-connected/developers.vue"),
     meta: {
       title: "Get Connected - AFL Network",
@@ -203,7 +203,7 @@ const routes = [
   {
     path: "/get-connected/public",
     name: "Public",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/get-connected/public.vue"),
     meta: {
       title: "Get Connected - AFL Network",
@@ -213,7 +213,7 @@ const routes = [
   {
     path: "/partners",
     name: "Partners",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/partners/partners.vue"),
     meta: {
       title: "Partners - AFL Network",
@@ -223,7 +223,7 @@ const routes = [
   {
     path: "/partners/mobile-operators",
     name: "PartnersMobileOperators",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/partners/mobile-operators.vue"),
     meta: {
       title: "Partners - AFL Network",
@@ -233,7 +233,7 @@ const routes = [
   {
     path: "/partners/retail-service-providers",
     name: "PartnersRetailServiceProviders",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/partners/retail-service-providers.vue"),
     meta: {
       title: "Partners - AFL Network",
@@ -243,7 +243,7 @@ const routes = [
   {
     path: "/partners/public-sector",
     name: "PartnersPublicSector",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/partners/public-sector.vue"),
     meta: {
       title: "Partners - AFL Network",
@@ -253,7 +253,7 @@ const routes = [
   {
     path: "/partners/businesses",
     name: "PartnersBusinesses",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/partners/businesses.vue"),
     meta: {
       title: "Partners - AFL Network",
@@ -263,7 +263,7 @@ const routes = [
   {
     path: "/communication/news",
     name: "AflNews",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/communication/blog.vue"),
     meta: {
       title: "News - AFL Network",
@@ -273,7 +273,7 @@ const routes = [
   {
     path: "/communication/news/:id",
     name: "SingleNews",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/communication/news/singleNews.vue"),
     meta: {
       title: "News - AFL Network",
@@ -283,7 +283,7 @@ const routes = [
   {
     path: "/communication/contact-us",
     name: "ContactUs",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/communication/contact-us.vue"),
     meta: {
       title: "Contact us - AFL Network",
@@ -293,7 +293,7 @@ const routes = [
   {
     path: "/careers",
     name: "Careers",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/careers/careers.vue"),
     meta: {
       title: "Careers - AFL Network",
@@ -303,7 +303,7 @@ const routes = [
   {
     path: "/careers/all-jobs",
     name: "AllJobs",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/careers/all-jobs.vue"),
     meta: {
       title: "Careers - AFL Network",
@@ -319,7 +319,7 @@ const routes = [
   {
     path: "/careers/job-application",
     name: "JobApplication",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/careers/job-application.vue"),
     meta: {
       title: "Careers - AFL Network",
@@ -329,7 +329,7 @@ const routes = [
   {
     path: "/our-solutions",
     name: "OurSolutions",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/our-solutions/our-solutions.vue"),
     meta: {
       title: "Our Solutions - AFL Network",
@@ -339,7 +339,7 @@ const routes = [
   {
     path: "/our-solutions/capacity",
     name: "Capacity",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/our-solutions/capacity.vue"),
     meta: {
       title: "Our Solutions - AFL Network",
@@ -349,7 +349,7 @@ const routes = [
   {
     path: "/our-solutions/fibre-to-the-home",
     name: "Fibre to the home",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/our-solutions/fibre-to-the-home.vue"),
     meta: {
       title: "Our Solutions - AFL Network",
@@ -359,7 +359,7 @@ const routes = [
   {
     path: "/our-solutions/dark-fibre",
     name: "Dark fibre",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/our-solutions/dark-fibre.vue"),
     meta: {
       title: "Our Solutions - AFL Network",
@@ -369,7 +369,7 @@ const routes = [
   {
     path: "/our-solutions/co-location",
     name: "Co-Location",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/our-solutions/co-location.vue"),
     meta: {
       title: "Our Solutions - AFL Network",
@@ -379,7 +379,7 @@ const routes = [
   {
     path: "/our-solutions/virtual-machines",
     name: "Virtual Machines",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/our-solutions/virtual-machines.vue"),
     meta: {
       title: "Our Solutions - AFL Network",
@@ -389,7 +389,7 @@ const routes = [
   {
     path: "/our-solutions/ftth/ftth-delivery",
     name: "Ftth delivery",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/our-solutions/ftth-delivery.vue"),
     meta: {
       title: "Our Solutions - AFL Network",
@@ -399,14 +399,12 @@ const routes = [
   {
     path: "/our-solutions/ftth/active-passive-ftth",
     name: "Active passive ftth",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/our-solutions/active-passive-ftth.vue"),
     meta: {
       title: "Our Solutions - AFL Network",
     },
   },
-
- 
 
   {
     path: "/admin/authentication",
@@ -470,23 +468,27 @@ const routes = [
           },
         ],
       },
+      {
+        path: "/admin/dashboard/contents",
+        component: () => import("../views/admin/contents.vue"),
+        children: [
+          {
+            path: "/admin/dashboard/contents",
+            component: () => import("../views/admin/contents/home.vue"),
+          },
+          {
+            path: "/admin/dashboard/about-us",
+            component: () => import("../views/admin/contents/about-us.vue"),
+          },
+        ],
+      },
     ],
-  },
-
-  {
-    path: "/test",
-    name: "Test",
-    beforeEnter: guardToHome,
-    component: () => import("../views/test.vue"),
-    meta: {
-      title: "Test - AFL Network",
-    },
   },
 
   {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
-    beforeEnter: guardToHome,
+    // beforeEnter: guardToHome,
     component: () => import("../views/PageNotFound.vue"),
     meta: {
       title: "404 Not Found - AFL Network",

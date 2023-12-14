@@ -46,94 +46,109 @@
 
       <div class="py-[30px] md:py-[60px]">
         <div class="w-[95%] xl:w-[1200px] mx-auto">
-          <div class="mb-[30px]">
-            <h2
-              class="text-center text-[20px] md:text-[30px] font-[700] text-black uppercase"
+          <div v-if="!msg">
+            <div class="mb-[30px]">
+              <h2
+                class="text-center text-[20px] md:text-[30px] font-[700] text-black uppercase"
+              >
+                Register with us today
+              </h2>
+              <p class="text-center text-[14px]">
+                Be the first to know when you can connect to our netword by registering
+                below. The asterisked fields are required.
+              </p>
+            </div>
+
+            <form
+              action=""
+              class="w-[95%] xl:w-[1100px] mx-auto grid grid-cols-2 md:grid-cols-3 gap-[10px]"
             >
-              Register with us today
-            </h2>
-            <p class="text-center text-[14px]">
-              Be the first to know when you can connect to our netword by registering
-              below. The asterisked fields are required.
-            </p>
+              <div class="w-full">
+                <label for="" class="font-[600] text-[14px] text-black mb-[5px] block">
+                  Area
+                  <span class="text-red-400">*</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="John"
+                  required
+                  class="text-[14px] p-[10px] border border-gray-300 w-full"
+                  :value="$route.query.selectedAddress"
+                />
+              </div>
+              <div class="w-full">
+                <label for="" class="font-[600] text-[14px] text-black mb-[5px] block">
+                  First name
+                  <span class="text-red-400">*</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="John"
+                  required
+                  class="text-[14px] p-[10px] border border-gray-300 w-full"
+                  v-model="firstname"
+                />
+              </div>
+
+              <div class="w-full">
+                <label for="" class="font-[600] text-[14px] text-black mb-[5px] block">
+                  Email
+                  <span class="text-red-400">*</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="smith@xyz.com"
+                  required
+                  class="text-[14px] p-[10px] border border-gray-300 w-full"
+                  v-model="email"
+                />
+              </div>
+
+              <div class="w-full">
+                <label for="" class="font-[600] text-[14px] text-black mb-[5px] block">
+                  Longitude
+                </label>
+                <input
+                  type="text"
+                  placeholder="6.4559"
+                  class="text-[14px] p-[10px] border border-gray-300 w-full"
+                  v-model="longitude"
+                />
+              </div>
+
+              <div class="w-full">
+                <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
+                  >Latitude</label
+                >
+                <input
+                  type="text"
+                  placeholder="3.2476"
+                  class="text-[14px] p-[10px] border border-gray-300 w-full"
+                  v-model="latitude"
+                />
+              </div>
+
+              <button
+                class="bg-black text-white p-[10px] self-end"
+                @click.prevent="submit"
+              >
+                Submit
+              </button>
+            </form>
           </div>
 
-          <form
-            action=""
-            class="w-[95%] xl:w-[1100px] mx-auto grid grid-cols-2 md:grid-cols-3 gap-[10px]"
-          >
-            <div class="w-full">
-              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block">
-                Area
-                <span class="text-red-400">*</span>
-              </label>
-              <input
-                type="text"
-                placeholder="John"
-                required
-                class="text-[14px] p-[10px] border border-gray-300 w-full"
-                :value="$route.query.selectedAddress"
-              />
-            </div>
-            <div class="w-full">
-              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block">
-                First name
-                <span class="text-red-400">*</span>
-              </label>
-              <input
-                type="text"
-                placeholder="John"
-                required
-                class="text-[14px] p-[10px] border border-gray-300 w-full"
-                v-model="firstname"
-              />
-            </div>
-
-            <div class="w-full">
-              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block">
-                Email
-                <span class="text-red-400">*</span>
-              </label>
-              <input
-                type="text"
-                placeholder="smith@xyz.com"
-                required
-                class="text-[14px] p-[10px] border border-gray-300 w-full"
-                v-model="email"
-              />
-            </div>
-
-            <div class="w-full">
-              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block">
-                Longitude
-              </label>
-              <input
-                type="text"
-                placeholder="6.4559"
-                class="text-[14px] p-[10px] border border-gray-300 w-full"
-                v-model="longitude"
-              />
-            </div>
-
-            <div class="w-full">
-              <label for="" class="font-[600] text-[14px] text-black mb-[5px] block"
-                >Latitude</label
+          <div v-else class="w-[95%] xl:w-[1100px] mx-auto my-[40px]">
+            <p class="text-[#2A2760] text-center text-[16px] md:text-[22px] font-[500]">
+              {{ msg }}
+            </p>
+            <div class="flex justify-center mt-[20px]">
+              <button
+                @click="$router.push('/')"
+                class="bg-[#2a2760] p-[5px_20px] text-white cursor-pointer"
               >
-              <input
-                type="text"
-                placeholder="3.2476"
-                class="text-[14px] p-[10px] border border-gray-300 w-full"
-                v-model="latitude"
-              />
+                Go back
+              </button>
             </div>
-
-            <button class="bg-black text-white p-[10px] self-end" @click.prevent="submit">
-              Submit
-            </button>
-          </form>
-
-          <div class="w-[95%] xl:w-[1100px] mx-auto mt-[20px]">
-            <p class="text-[#2A2760]">{{ msg }}</p>
           </div>
         </div>
       </div>
@@ -184,7 +199,7 @@ export default {
       this.firstname = "";
       this.email = "";
       this.latitude = "";
-      setTimeout(() => (this.msg = ""), 4000);
+      // setTimeout(() => (this.msg = ""), 4000);
     },
 
     async getArea() {

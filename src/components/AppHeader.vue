@@ -14,8 +14,7 @@ defineProps(["showMobileMenu", "navMenu"]);
 <template>
   <header
     class="w-full absolute z-[1000] top-0 shadow-none"
-    :class="$route.path === '/' ? 'bg-transparent' : 'bg-white !shadow-md'"
-    v-if="route.path !== '/'"
+    :class="$route.path === '/' ? 'bg-white' : 'bg-white !shadow-md'"
   >
     <div class="w-[90%] xl:w-[1200px] mx-auto py-[10px] md:py-[20px]">
       <div class="flex justify-between items-center">
@@ -28,6 +27,8 @@ defineProps(["showMobileMenu", "navMenu"]);
           /> -->
           <img
             src="../assets/images/afl-networks-logo.png"
+            width="100"
+            height="100"
             class="w-[100px] md:w-[180px]"
             alt="afl"
           />
@@ -87,8 +88,7 @@ defineProps(["showMobileMenu", "navMenu"]);
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="w-4 md:w-6 h-4 md:h-6 text-white"
-            :class="$route.path === '/' ? 'text-white' : '!text-[#2A2760]'"
+            class="w-4 md:w-6 h-4 md:h-6 text-[#2A2760]"
             @click="$emit('show-search')"
           >
             <path
@@ -105,8 +105,7 @@ defineProps(["showMobileMenu", "navMenu"]);
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="w-5 md:w-6 h-5 md:h-6 block lg:hidden text-white"
-            :class="$route.path === '/' ? 'text-white' : '!text-[#2A2760]'"
+            class="w-5 md:w-6 h-5 md:h-6 block lg:hidden text-[#2A2760]"
             @click="$emit('open-mobile-menu')"
             v-if="!showMobileMenu"
           >
@@ -124,8 +123,7 @@ defineProps(["showMobileMenu", "navMenu"]);
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="w-5 md:w-6 h-5 md:h-6 text-white"
-            :class="$route.path === '/' ? 'text-white' : '!text-[#2A2760]'"
+            class="w-5 md:w-6 h-5 md:h-6 text-[#2A2760]"
             v-else
             @click="$emit('close-mobile-menu')"
           >

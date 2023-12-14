@@ -1,6 +1,5 @@
 <template>
   <footer
-    v-if="$route.path !== '/'"
     class="py-[50px] md:py-[100px] bg-black"
     :class="
       $route.path.split('/')[1] !== 'admin' && $route.path !== '/home'
@@ -16,6 +15,8 @@
           <img
             src="../assets/images/afl-networks-logo-reversed.png"
             alt="afl logo"
+            width="100"
+            height="100"
             class="w-[100px] md:w-[180px]"
           />
         </router-link>

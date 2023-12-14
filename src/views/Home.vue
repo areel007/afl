@@ -9,6 +9,26 @@ import axios from "axios";
 
 export default {
   name: "Home",
+  // metaInfo: {
+  //   title: "AFL Networks",
+  //   meta: [
+  //     {
+  //       name: "description",
+  //       content:
+  //         "AFL Networks, Open Access Metro Fibre Broadband, Metro Fibre Broadband, Aldreda Fields Limited, AFL Nigeria, Open Access Connectivity, Open Access Aerial Fibre Connectivity, Broadband Lagos, Dark Fibre, Fibre Optic Network, Fast Broadband Internet, Broadband service, Internet Connectivity Lagos, Lagos Smartcity, Internet in Lagos, Fast Internet in Lagos, Fast Fibre in Lagos",
+  //     },
+  //   ],
+  // },
+  head() {
+    return {
+      title: "Page Title",
+      meta: [
+        { property: "og:title", content: "Open Graph Title" },
+        { name: "description", content: "Page description" },
+        // Add more meta tags as needed
+      ],
+    };
+  },
   components: { PartnersCarousel, Rollout, Carousel },
   data() {
     return {

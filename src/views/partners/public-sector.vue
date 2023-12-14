@@ -1,7 +1,7 @@
 <template>
   <div class="relative top-[48px] md:top-[92px]">
     <!--  -->
-    <div class="w-full bg-[#f5f5f5] py-[20px] hidden md:block">
+    <div class="w-full bg-[#f5f5f5] py-[20px] hidden lg:block">
       <div class="w-[85%] xl:w-[1200px] mx-auto">
         <div class="flex justify-between items-center">
           <ul class="flex items-center gap-[5px] xl:gap-[20px] text-[14px]">
