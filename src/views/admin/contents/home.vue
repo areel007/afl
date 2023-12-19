@@ -1,5 +1,6 @@
 <template>
-  <div class="py-[20px] min-h-[700px]">
+  <div class="py-[20px] min-h-[700px] grid grid-cols-1 gap-[50px]">
+    <!-- Hero start -->
     <div class="flex flex-col gap-[30px]">
       <!-- Hero One -->
       <div class="flex flex-col gap-[10px]">
@@ -14,7 +15,10 @@
             v-model="heroOneText"
             class="border border-gray-400 p-[10px] w-full md:w-[500px] resize-none"
           ></textarea>
-          <button class="bg-green-500 px-[20px] text-white" @click="updateHeroOneText">
+          <button
+            class="bg-green-500 px-[20px] text-white"
+            @click="updateHeroOneText"
+          >
             Submit
           </button>
         </div>
@@ -36,7 +40,10 @@
             v-model="heroTwoText"
             class="border border-gray-400 p-[10px] w-full md:w-[500px] resize-none"
           ></textarea>
-          <button class="bg-green-500 px-[20px] text-white" @click="updateHeroTwoText">
+          <button
+            class="bg-green-500 px-[20px] text-white"
+            @click="updateHeroTwoText"
+          >
             Submit
           </button>
         </div>
@@ -58,7 +65,10 @@
             v-model="heroThreeText"
             class="border border-gray-400 p-[10px] w-full md:w-[500px] resize-none"
           ></textarea>
-          <button class="bg-green-500 px-[20px] text-white" @click="updateHeroThreeText">
+          <button
+            class="bg-green-500 px-[20px] text-white"
+            @click="updateHeroThreeText"
+          >
             Submit
           </button>
         </div>
@@ -80,7 +90,10 @@
             v-model="heroFourText"
             class="border border-gray-400 p-[10px] w-full md:w-[500px] resize-none"
           ></textarea>
-          <button class="bg-green-500 px-[20px] text-white" @click="updateHeroFourText">
+          <button
+            class="bg-green-500 px-[20px] text-white"
+            @click="updateHeroFourText"
+          >
             Submit
           </button>
         </div>
@@ -102,12 +115,80 @@
             v-model="heroFiveText"
             class="border border-gray-400 p-[10px] w-full md:w-[500px] resize-none"
           ></textarea>
-          <button class="bg-green-500 px-[20px] text-white" @click="updateHeroFiveText">
+          <button
+            class="bg-green-500 px-[20px] text-white"
+            @click="updateHeroFiveText"
+          >
             Submit
           </button>
         </div>
         <div>
           <img :src="heroFiveImg" alt="afl" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero end -->
+
+    <!-- Deep penetrating -->
+    <div class="flex flex-col gap-[10px]">
+      <p class="text-[20px] font-[600]">Deep Penetration</p>
+      <span class="text-[14px]"
+        >Accepted file format <b class="text-red-500">jpg, png</b>*</span
+      >
+      <input type="file" @change="handleChangeDeepPenetrationImg" />
+      <div>
+        <img :src="deepPenetrationImg" alt="afl" />
+      </div>
+    </div>
+
+    <!-- Who we are -->
+    <div class="flex flex-col gap-[10px]">
+      <p class="text-[20px] font-[600]">Who we are</p>
+      <span class="text-[14px]"
+        >Accepted file format <b class="text-red-500">jpg, png</b>*</span
+      >
+      <input type="file" @change="handleWhoWeAre" />
+      <div>
+        <img :src="whoWeAre" alt="afl" />
+      </div>
+    </div>
+
+    <!-- Networks -->
+    <!-- Who we are -->
+    <div class="flex flex-col gap-[10px]">
+      <p class="text-[20px] font-[600]">Networks</p>
+      <span class="text-[14px]"
+        >Accepted file format <b class="text-red-500">jpg, png</b>*</span
+      >
+      <input type="file" @change="handleAddPartner" />
+      <div class="flex gap-[10px]">
+        <div
+          v-for="partner in partners"
+          :key="partner.cloudinaryId"
+          class="relative"
+        >
+          <div
+            class="w-[30px] h-[30px] bg-black absolute flex justify-center items-center"
+            @click="handleDeletePartner(`${partner._id}`)"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 text-white"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </div>
+
+          <img :src="partner.partnerImgUrl" alt="afl" />
         </div>
       </div>
     </div>
@@ -134,9 +215,20 @@ export default {
       // Hero Five
       heroFiveImg: null,
       heroFiveText: "",
+
+      // Deep penetration
+      deepPenetrationImg: null,
+
+      // Who we are
+      whoWeAre: null,
+
+      // Partners
+      partners: null,
+      partner: null,
     };
   },
   methods: {
+    // Hero start
     // hero one image
     async getHeroOneImg() {
       const heroOneImg = await axios.get(
@@ -361,6 +453,92 @@ export default {
         console.log(error);
       }
     },
+
+    // Hero end
+
+    // Deep penetration start
+    async getDeepPenetrationImg() {
+      const deepPenetrationImg = await axios.get(
+        "http://localhost:5000/api/v1/home/deep-penetration/657af3f5ff6892e671212ce6"
+      );
+      this.deepPenetrationImg =
+        deepPenetrationImg.data.deepPenetrationImg.deepPenetrationImgUrl;
+    },
+
+    async handleChangeDeepPenetrationImg(event) {
+      try {
+        this.deepPenetrationImg = event.target.files[0];
+        const fd = new FormData();
+        fd.append("deepPenetrationImg", this.deepPenetrationImg);
+
+        await axios.patch(
+          "http://localhost:5000/api/v1/home/deep-penetration/657af3f5ff6892e671212ce6",
+          fd
+        );
+
+        await this.getDeepPenetrationImg();
+      } catch (e) {
+        console.error(e);
+      }
+    },
+    // Deep penetration end
+
+    // Who we are start
+    async getWhoWeAre() {
+      const whoWeAreImg = await axios.get(
+        "http://localhost:5000/api/v1/home/who-we-are/657bdc83c03c7020b7fb3c8a"
+      );
+      this.whoWeAre = whoWeAreImg.data.whoWeAreImg.whoWeAreImgUrl;
+    },
+
+    async handleWhoWeAre(event) {
+      try {
+        this.whoWeAre = event.target.files[0];
+        const fd = new FormData();
+        fd.append("whoWeAre", this.whoWeAre);
+
+        await axios.patch(
+          "http://localhost:5000/api/v1/home/who-we-are/657bdc83c03c7020b7fb3c8a",
+          fd
+        );
+
+        await this.getWhoWeAre();
+      } catch (e) {
+        console.error(e);
+      }
+    },
+
+    // Who we are end
+
+    // Networks
+    async getPartners() {
+      const partners = await axios.get(
+        "http://localhost:5000/api/v1/home/partners"
+      );
+      this.partners = partners.data.partners;
+    },
+
+    async handleAddPartner(event) {
+      try {
+        const partner = event.target.files[0];
+        const fd = new FormData();
+        fd.append("partner", partner);
+        await axios.post("http://localhost:5000/api/v1/home/partners", fd);
+
+        await this.getPartners();
+      } catch (error) {
+        console.log(error);
+      }
+    },
+
+    async handleDeletePartner(id) {
+      try {
+        await axios.delete(`http://localhost:5000/api/v1/home/partners/${id}`);
+        this.getPartners();
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
   mounted() {
     this.getHeroOneImg();
@@ -373,6 +551,9 @@ export default {
     this.getHeroFourText();
     this.getHeroFiveImg();
     this.getHeroFiveText();
+    this.getDeepPenetrationImg();
+    this.getWhoWeAre();
+    this.getPartners();
   },
 };
 </script>
